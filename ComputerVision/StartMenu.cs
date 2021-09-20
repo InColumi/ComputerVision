@@ -69,7 +69,7 @@ namespace ComputerVision
             }
         }
 
-        public Image GetGrayPhoto(string pathPhoto)
+        private Image GetGrayPhoto(string pathPhoto)
         {
             Bitmap imageGray = new Bitmap(pathPhoto);
             Bitmap imageGray2 = new Bitmap(pathPhoto);
@@ -90,13 +90,13 @@ namespace ComputerVision
             return imageGray;
         }
 
-        public Image GetTransformGrayWorld(string pathPhoto)
+        private Color GetAverage(Image sourse)
         {
-            Bitmap image = new Bitmap(pathPhoto);
-
+            Bitmap image = new Bitmap(sourse);
             int countR = 0;
             int countG = 0;
             int countB = 0;
+
             int width = image.Width;
             int height = image.Height;
             int size = width * height;
@@ -116,11 +116,24 @@ namespace ComputerVision
             countG /= size;
             countB /= size;
 
-            double avg = (countR + countG + countB) / 3.0;
-            double avgR = avg / countR;
-            double avgG = avg / countG;
-            double avgB = avg / countB;
+            return Color.FromArgb(countR, countG, countB);
+        }
 
+        private Image GetTransformGrayWorld(string pathPhoto)
+        {
+            Bitmap image = new Bitmap(pathPhoto);
+
+            int width = image.Width;
+            int height = image.Height;
+
+            Color averageColor = GetAverage(image);
+
+            double avg = (averageColor.R + averageColor.G + averageColor.B) / 3.0;
+            double avgR = avg / averageColor.R;
+            double avgG = avg / averageColor.G;
+            double avgB = avg / averageColor.B;
+
+            Color pixel;
             int minR = 0;
             int minG = 0;
             int minB = 0;
@@ -144,10 +157,37 @@ namespace ComputerVision
             return (number > 255) ? 255 : number;
         }
 
-        //public Image GetTransformToMainColor(string pathPhoto, PictureBox pictureBoxOutput)
-        //{
+        public Image GetTransformToMainColor(string pathPhoto, Image sourse)
+        {
+            Bitmap image = new Bitmap(pathPhoto);
 
-        //}
+            int width = image.Width;
+            int height = image.Height;
+
+            Color averageColorSouse = GetAverage(image);
+            Color averageColorDestination = GetAverage(sourse);
+
+            double aveR = averageColorDestination.R / Convert.ToDouble(averageColorSouse.R);
+            double aveG = averageColorDestination.G / Convert.ToDouble(averageColorSouse.G);
+            double aveB = averageColorDestination.B / Convert.ToDouble(averageColorSouse.B);
+
+            int minR = 0;
+            int minG = 0;
+            int minB = 0;
+            Color pixel;
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    pixel = image.GetPixel(i, j);
+                    minR = GetMin(Convert.ToInt16(pixel.R * aveR));
+                    minG = GetMin(Convert.ToInt16(pixel.G * aveG));
+                    minB = GetMin(Convert.ToInt16(pixel.B * aveB));
+                    image.SetPixel(i, j, Color.FromArgb(minR, minG, minB));
+                }
+            }
+            return image;
+        }
 
         //public Image GetTransformByFunction(string pathPhoto, PictureBox pictureBoxOutput)
         //{
@@ -177,7 +217,7 @@ namespace ComputerVision
                         output.Image = newImage;
                         break;
                     case "GetTransformToMainColor":
-                        //newImage = GetTransformToMainColor(pathToFile);
+                        newImage = GetTransformToMainColor(pathToFile, pictureBoxLaba2MainColorSourse.Image);
                         break;
                     case "GetTransformByFunction":
                         //newImage = GetTransformByFunction(pathToFile);
@@ -216,6 +256,20 @@ namespace ComputerVision
         private void pictureBoxLaba2TransformByFunctionInput_Click(object sender, EventArgs e)
         {
             InvokeMethodByName("GetTransformByFunction", pictureBoxLaba2TransformByFunctionInput, pictureBoxLaba2TransformByFunctionOutput);
+        }
+
+        private void pictureBoxLaba2MainColorSourse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            string pathToFile = "";
+            Image newImage;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pathToFile = openFileDialog.FileName;
+                newImage = Image.FromFile(pathToFile);
+                pictureBoxLaba2MainColorSourse.Image = newImage;
+
+            }
         }
     }
 }
