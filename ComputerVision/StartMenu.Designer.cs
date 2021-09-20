@@ -1,0 +1,465 @@
+﻿namespace ComputerVision
+{
+	partial class StartMenu
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
+
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+
+		#region Windows Form Designer generated code
+
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartMenu));
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.chartRGB = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.pictureBoxLaba1Input = new System.Windows.Forms.PictureBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pictureBoxOutputImageLaba2Gray = new System.Windows.Forms.PictureBox();
+            this.splitter3 = new System.Windows.Forms.Splitter();
+            this.pictureBoxInputImageLaba2Gray = new System.Windows.Forms.PictureBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLaba2MainColorInput = new System.Windows.Forms.PictureBox();
+            this.splitter4 = new System.Windows.Forms.Splitter();
+            this.pictureBoxLaba2MainColorOutput = new System.Windows.Forms.PictureBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLaba2GrayWorldInput = new System.Windows.Forms.PictureBox();
+            this.splitter2 = new System.Windows.Forms.Splitter();
+            this.pictureBoxLaba2GrayWorldOutput = new System.Windows.Forms.PictureBox();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLaba2TransformByFunctionInput = new System.Windows.Forms.PictureBox();
+            this.splitter5 = new System.Windows.Forms.Splitter();
+            this.pictureBoxLaba2TransformByFunctionOutput = new System.Windows.Forms.PictureBox();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRGB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba1Input)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutputImageLaba2Gray)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInputImageLaba2Gray)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            this.tabControl4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2MainColorInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2MainColorOutput)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2GrayWorldInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2GrayWorldOutput)).BeginInit();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2TransformByFunctionInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2TransformByFunctionOutput)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1268, 584);
+            this.tabControl1.TabIndex = 5;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.chartRGB);
+            this.tabPage1.Controls.Add(this.splitter1);
+            this.tabPage1.Controls.Add(this.pictureBoxLaba1Input);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1260, 558);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Лаба 1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // chartRGB
+            // 
+            chartArea9.AxisY.IsMarginVisible = false;
+            chartArea9.Name = "ChartAreaRed";
+            chartArea10.AxisY.IsMarginVisible = false;
+            chartArea10.Name = "ChartAreaGreen";
+            chartArea11.AxisY.IsMarginVisible = false;
+            chartArea11.Name = "ChartAreaBlue";
+            chartArea12.AxisY.IsMarginVisible = false;
+            chartArea12.Name = "ChartAreaAll";
+            this.chartRGB.ChartAreas.Add(chartArea9);
+            this.chartRGB.ChartAreas.Add(chartArea10);
+            this.chartRGB.ChartAreas.Add(chartArea11);
+            this.chartRGB.ChartAreas.Add(chartArea12);
+            this.chartRGB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartRGB.Location = new System.Drawing.Point(539, 3);
+            this.chartRGB.Name = "chartRGB";
+            series9.ChartArea = "ChartAreaRed";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series9.Color = System.Drawing.Color.Red;
+            series9.Name = "SeriesRed";
+            series10.ChartArea = "ChartAreaGreen";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series10.Color = System.Drawing.Color.Lime;
+            series10.Name = "SeriesGreen";
+            series11.ChartArea = "ChartAreaBlue";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series11.Color = System.Drawing.Color.Blue;
+            series11.Name = "SeriesBlue";
+            series12.ChartArea = "ChartAreaAll";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series12.Color = System.Drawing.Color.Black;
+            series12.Name = "SeriesAll";
+            this.chartRGB.Series.Add(series9);
+            this.chartRGB.Series.Add(series10);
+            this.chartRGB.Series.Add(series11);
+            this.chartRGB.Series.Add(series12);
+            this.chartRGB.Size = new System.Drawing.Size(718, 552);
+            this.chartRGB.TabIndex = 2;
+            this.chartRGB.Text = "chart1";
+            // 
+            // splitter1
+            // 
+            this.splitter1.BackColor = System.Drawing.Color.Black;
+            this.splitter1.Location = new System.Drawing.Point(534, 3);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(5, 552);
+            this.splitter1.TabIndex = 1;
+            this.splitter1.TabStop = false;
+            // 
+            // pictureBoxLaba1Input
+            // 
+            this.pictureBoxLaba1Input.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBoxLaba1Input.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLaba1Input.Image")));
+            this.pictureBoxLaba1Input.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxLaba1Input.Name = "pictureBoxLaba1Input";
+            this.pictureBoxLaba1Input.Size = new System.Drawing.Size(531, 552);
+            this.pictureBoxLaba1Input.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLaba1Input.TabIndex = 3;
+            this.pictureBoxLaba1Input.TabStop = false;
+            this.pictureBoxLaba1Input.Click += new System.EventHandler(this.pictureBoxInputImageLaba1_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.tabControl2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1260, 558);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Лаба 2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(3, 3);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1254, 552);
+            this.tabControl2.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.pictureBoxOutputImageLaba2Gray);
+            this.tabPage3.Controls.Add(this.splitter3);
+            this.tabPage3.Controls.Add(this.pictureBoxInputImageLaba2Gray);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1246, 526);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Преобразование к полутоновому изображению";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxOutputImageLaba2Gray
+            // 
+            this.pictureBoxOutputImageLaba2Gray.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxOutputImageLaba2Gray.Location = new System.Drawing.Point(507, 3);
+            this.pictureBoxOutputImageLaba2Gray.Name = "pictureBoxOutputImageLaba2Gray";
+            this.pictureBoxOutputImageLaba2Gray.Size = new System.Drawing.Size(736, 520);
+            this.pictureBoxOutputImageLaba2Gray.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxOutputImageLaba2Gray.TabIndex = 2;
+            this.pictureBoxOutputImageLaba2Gray.TabStop = false;
+            // 
+            // splitter3
+            // 
+            this.splitter3.BackColor = System.Drawing.Color.Black;
+            this.splitter3.Location = new System.Drawing.Point(502, 3);
+            this.splitter3.Name = "splitter3";
+            this.splitter3.Size = new System.Drawing.Size(5, 520);
+            this.splitter3.TabIndex = 1;
+            this.splitter3.TabStop = false;
+            // 
+            // pictureBoxInputImageLaba2Gray
+            // 
+            this.pictureBoxInputImageLaba2Gray.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBoxInputImageLaba2Gray.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxInputImageLaba2Gray.Image")));
+            this.pictureBoxInputImageLaba2Gray.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxInputImageLaba2Gray.Name = "pictureBoxInputImageLaba2Gray";
+            this.pictureBoxInputImageLaba2Gray.Size = new System.Drawing.Size(499, 520);
+            this.pictureBoxInputImageLaba2Gray.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxInputImageLaba2Gray.TabIndex = 0;
+            this.pictureBoxInputImageLaba2Gray.TabStop = false;
+            this.pictureBoxInputImageLaba2Gray.Click += new System.EventHandler(this.pictureBoxInputImageLaba2Gray_Click);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.tabControl4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1246, 526);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Цветовая коррекция изображений";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabControl4
+            // 
+            this.tabControl4.Controls.Add(this.tabPage5);
+            this.tabControl4.Controls.Add(this.tabPage6);
+            this.tabControl4.Controls.Add(this.tabPage8);
+            this.tabControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl4.Location = new System.Drawing.Point(3, 3);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(1240, 520);
+            this.tabControl4.TabIndex = 2;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.pictureBoxLaba2MainColorInput);
+            this.tabPage5.Controls.Add(this.splitter4);
+            this.tabPage5.Controls.Add(this.pictureBoxLaba2MainColorOutput);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1232, 494);
+            this.tabPage5.TabIndex = 0;
+            this.tabPage5.Text = "Коррекция с опорным цветом";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxLaba2MainColorInput
+            // 
+            this.pictureBoxLaba2MainColorInput.BackColor = System.Drawing.Color.White;
+            this.pictureBoxLaba2MainColorInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxLaba2MainColorInput.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLaba2MainColorInput.Image")));
+            this.pictureBoxLaba2MainColorInput.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxLaba2MainColorInput.Name = "pictureBoxLaba2MainColorInput";
+            this.pictureBoxLaba2MainColorInput.Size = new System.Drawing.Size(540, 488);
+            this.pictureBoxLaba2MainColorInput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLaba2MainColorInput.TabIndex = 9;
+            this.pictureBoxLaba2MainColorInput.TabStop = false;
+            this.pictureBoxLaba2MainColorInput.Click += new System.EventHandler(this.pictureBoxLaba2MainColorInput_Click);
+            // 
+            // splitter4
+            // 
+            this.splitter4.BackColor = System.Drawing.Color.Black;
+            this.splitter4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter4.Location = new System.Drawing.Point(543, 3);
+            this.splitter4.Name = "splitter4";
+            this.splitter4.Size = new System.Drawing.Size(5, 488);
+            this.splitter4.TabIndex = 10;
+            this.splitter4.TabStop = false;
+            // 
+            // pictureBoxLaba2MainColorOutput
+            // 
+            this.pictureBoxLaba2MainColorOutput.BackColor = System.Drawing.Color.White;
+            this.pictureBoxLaba2MainColorOutput.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBoxLaba2MainColorOutput.Location = new System.Drawing.Point(548, 3);
+            this.pictureBoxLaba2MainColorOutput.Name = "pictureBoxLaba2MainColorOutput";
+            this.pictureBoxLaba2MainColorOutput.Size = new System.Drawing.Size(681, 488);
+            this.pictureBoxLaba2MainColorOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLaba2MainColorOutput.TabIndex = 8;
+            this.pictureBoxLaba2MainColorOutput.TabStop = false;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.pictureBoxLaba2GrayWorldInput);
+            this.tabPage6.Controls.Add(this.splitter2);
+            this.tabPage6.Controls.Add(this.pictureBoxLaba2GrayWorldOutput);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(1232, 494);
+            this.tabPage6.TabIndex = 2;
+            this.tabPage6.Text = "Серый мир";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxLaba2GrayWorldInput
+            // 
+            this.pictureBoxLaba2GrayWorldInput.BackColor = System.Drawing.Color.White;
+            this.pictureBoxLaba2GrayWorldInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxLaba2GrayWorldInput.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLaba2GrayWorldInput.Image")));
+            this.pictureBoxLaba2GrayWorldInput.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxLaba2GrayWorldInput.Name = "pictureBoxLaba2GrayWorldInput";
+            this.pictureBoxLaba2GrayWorldInput.Size = new System.Drawing.Size(546, 494);
+            this.pictureBoxLaba2GrayWorldInput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLaba2GrayWorldInput.TabIndex = 6;
+            this.pictureBoxLaba2GrayWorldInput.TabStop = false;
+            this.pictureBoxLaba2GrayWorldInput.Click += new System.EventHandler(this.pictureBoxLaba2GrayWorldInput_Click);
+            // 
+            // splitter2
+            // 
+            this.splitter2.BackColor = System.Drawing.Color.Black;
+            this.splitter2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter2.Location = new System.Drawing.Point(546, 0);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(5, 494);
+            this.splitter2.TabIndex = 7;
+            this.splitter2.TabStop = false;
+            // 
+            // pictureBoxLaba2GrayWorldOutput
+            // 
+            this.pictureBoxLaba2GrayWorldOutput.BackColor = System.Drawing.Color.White;
+            this.pictureBoxLaba2GrayWorldOutput.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBoxLaba2GrayWorldOutput.Location = new System.Drawing.Point(551, 0);
+            this.pictureBoxLaba2GrayWorldOutput.Name = "pictureBoxLaba2GrayWorldOutput";
+            this.pictureBoxLaba2GrayWorldOutput.Size = new System.Drawing.Size(681, 494);
+            this.pictureBoxLaba2GrayWorldOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLaba2GrayWorldOutput.TabIndex = 5;
+            this.pictureBoxLaba2GrayWorldOutput.TabStop = false;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.pictureBoxLaba2TransformByFunctionInput);
+            this.tabPage8.Controls.Add(this.splitter5);
+            this.tabPage8.Controls.Add(this.pictureBoxLaba2TransformByFunctionOutput);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(1232, 494);
+            this.tabPage8.TabIndex = 1;
+            this.tabPage8.Text = "По виду функции преобразования";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxLaba2TransformByFunctionInput
+            // 
+            this.pictureBoxLaba2TransformByFunctionInput.BackColor = System.Drawing.Color.White;
+            this.pictureBoxLaba2TransformByFunctionInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxLaba2TransformByFunctionInput.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLaba2TransformByFunctionInput.Image")));
+            this.pictureBoxLaba2TransformByFunctionInput.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxLaba2TransformByFunctionInput.Name = "pictureBoxLaba2TransformByFunctionInput";
+            this.pictureBoxLaba2TransformByFunctionInput.Size = new System.Drawing.Size(540, 488);
+            this.pictureBoxLaba2TransformByFunctionInput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLaba2TransformByFunctionInput.TabIndex = 9;
+            this.pictureBoxLaba2TransformByFunctionInput.TabStop = false;
+            this.pictureBoxLaba2TransformByFunctionInput.Click += new System.EventHandler(this.pictureBoxLaba2TransformByFunctionInput_Click);
+            // 
+            // splitter5
+            // 
+            this.splitter5.BackColor = System.Drawing.Color.Black;
+            this.splitter5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter5.Location = new System.Drawing.Point(543, 3);
+            this.splitter5.Name = "splitter5";
+            this.splitter5.Size = new System.Drawing.Size(5, 488);
+            this.splitter5.TabIndex = 10;
+            this.splitter5.TabStop = false;
+            // 
+            // pictureBoxLaba2TransformByFunctionOutput
+            // 
+            this.pictureBoxLaba2TransformByFunctionOutput.BackColor = System.Drawing.Color.White;
+            this.pictureBoxLaba2TransformByFunctionOutput.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBoxLaba2TransformByFunctionOutput.Location = new System.Drawing.Point(548, 3);
+            this.pictureBoxLaba2TransformByFunctionOutput.Name = "pictureBoxLaba2TransformByFunctionOutput";
+            this.pictureBoxLaba2TransformByFunctionOutput.Size = new System.Drawing.Size(681, 488);
+            this.pictureBoxLaba2TransformByFunctionOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLaba2TransformByFunctionOutput.TabIndex = 8;
+            this.pictureBoxLaba2TransformByFunctionOutput.TabStop = false;
+            // 
+            // StartMenu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1268, 584);
+            this.Controls.Add(this.tabControl1);
+            this.DoubleBuffered = true;
+            this.Name = "StartMenu";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Gistogramma";
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartRGB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba1Input)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOutputImageLaba2Gray)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInputImageLaba2Gray)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2MainColorInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2MainColorOutput)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2GrayWorldInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2GrayWorldOutput)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2TransformByFunctionInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2TransformByFunctionOutput)).EndInit();
+            this.ResumeLayout(false);
+
+		}
+
+		#endregion
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabControl tabControl4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.PictureBox pictureBoxLaba2GrayWorldInput;
+        private System.Windows.Forms.Splitter splitter2;
+        private System.Windows.Forms.PictureBox pictureBoxLaba2GrayWorldOutput;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRGB;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.PictureBox pictureBoxLaba1Input;
+        private System.Windows.Forms.Splitter splitter3;
+        private System.Windows.Forms.PictureBox pictureBoxInputImageLaba2Gray;
+        private System.Windows.Forms.PictureBox pictureBoxOutputImageLaba2Gray;
+        private System.Windows.Forms.PictureBox pictureBoxLaba2MainColorInput;
+        private System.Windows.Forms.Splitter splitter4;
+        private System.Windows.Forms.PictureBox pictureBoxLaba2MainColorOutput;
+        private System.Windows.Forms.PictureBox pictureBoxLaba2TransformByFunctionInput;
+        private System.Windows.Forms.Splitter splitter5;
+        private System.Windows.Forms.PictureBox pictureBoxLaba2TransformByFunctionOutput;
+    }
+}
+
