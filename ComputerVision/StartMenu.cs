@@ -129,12 +129,19 @@ namespace ComputerVision
                 for (int j = 0; j < height; j++)
                 {
                     pixel = image.GetPixel(i, j);
-
-                    image.SetPixel(i, j, Color.FromArgb(Convert.ToInt16(pixel.R * avgR), Convert.ToInt16(pixel.G * avgG), Convert.ToInt16(pixel.B * avgB)));
+                    minR = GetMin(Convert.ToInt16(pixel.R * avgR));
+                    minG = GetMin(Convert.ToInt16(pixel.G * avgG));
+                    minB = GetMin(Convert.ToInt16(pixel.B * avgB));
+                    image.SetPixel(i, j, Color.FromArgb(minR, minG, minB));
                 }
             }
 
             return image;
+        }
+
+        private int GetMin(int number)
+        {
+            return (number > 255) ? 255 : number;
         }
 
         //public Image GetTransformToMainColor(string pathPhoto, PictureBox pictureBoxOutput)
@@ -151,33 +158,38 @@ namespace ComputerVision
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             string pathToFile = "";
-            Image newImage = input.Image;
+            Image newImage;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 pathToFile = openFileDialog.FileName;
-                input.Image = Image.FromFile(pathToFile);
+                newImage = Image.FromFile(pathToFile);
+                input.Image = newImage;
                 switch (name)
                 {
                     case "CountColorsAndAddToChart":
                         CountColorsAndAddToChart(pathToFile);
                         break;
-                    case "MakeGrayPhoto":
+                    case "GetGrayPhoto":
                         newImage = GetGrayPhoto(pathToFile);
                         break;
-                    case "TransformGrayWorld":
+                    case "GetTransformGrayWorld":
                         newImage = GetTransformGrayWorld(pathToFile);
+                        output.Image = newImage;
                         break;
-                    case "TransformToMainColor":
+                    case "GetTransformToMainColor":
                         //newImage = GetTransformToMainColor(pathToFile);
                         break;
-                    case "TransformByFunction":
+                    case "GetTransformByFunction":
                         //newImage = GetTransformByFunction(pathToFile);
                         break;
                     default:
                         MessageBox.Show("Error in InvokeMethodByName.");
                         break;
                 }
-                output.Image = newImage;
+                if (output != null)
+                {
+                    output.Image = newImage;
+                }
             }
         }
 
@@ -188,22 +200,22 @@ namespace ComputerVision
 
         private void pictureBoxInputImageLaba2Gray_Click(object sender, EventArgs e)
         {
-            InvokeMethodByName("MakeGrayPhoto", pictureBoxInputImageLaba2Gray, pictureBoxOutputImageLaba2Gray);
+            InvokeMethodByName("GetGrayPhoto", pictureBoxInputImageLaba2Gray, pictureBoxOutputImageLaba2Gray);
         }
 
         private void pictureBoxLaba2MainColorInput_Click(object sender, EventArgs e)
         {
-            InvokeMethodByName("MakeGrayPhoto", pictureBoxLaba2MainColorInput, pictureBoxLaba2MainColorOutput);
+            InvokeMethodByName("GetTransformToMainColor", pictureBoxLaba2MainColorInput, pictureBoxLaba2MainColorOutput);
         }
 
         private void pictureBoxLaba2GrayWorldInput_Click(object sender, EventArgs e)
         {
-            InvokeMethodByName("TransformToMainColor", pictureBoxLaba2GrayWorldInput, pictureBoxLaba2GrayWorldOutput);
+            InvokeMethodByName("GetTransformGrayWorld", pictureBoxLaba2GrayWorldInput, pictureBoxLaba2GrayWorldOutput);
         }
 
         private void pictureBoxLaba2TransformByFunctionInput_Click(object sender, EventArgs e)
         {
-            InvokeMethodByName("TransformByFunction", pictureBoxLaba2TransformByFunctionInput, pictureBoxLaba2TransformByFunctionOutput);
+            InvokeMethodByName("GetTransformByFunction", pictureBoxLaba2TransformByFunctionInput, pictureBoxLaba2TransformByFunctionOutput);
         }
     }
 }
