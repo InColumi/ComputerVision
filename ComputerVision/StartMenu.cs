@@ -197,26 +197,26 @@ namespace ComputerVision
         private int TransformValue(double number)
         {
             int newValue = 0;
-            //if (number >= 0 && number < 50)
-            //{
-            //    newValue = 25;
-            //}
-            //else if(number >= 50 && number < 100)  
-            //{
-            //    newValue = 75;
-            //}
-            //else if (number >= 100 && number < 150)
-            //{
-            //    newValue = 125;
-            //}
-            //else if (number >= 150 && number < 200)
-            //{
-            //    newValue = 175;
-            //}
-            //else
-            //{
-            //    newValue = 200;
-            //}
+            if (number >= 0 && number < 50)
+            {
+                newValue = 25;
+            }
+            else if (number >= 50 && number < 100)
+            {
+                newValue = 75;
+            }
+            else if (number >= 100 && number < 150)
+            {
+                newValue = 125;
+            }
+            else if (number >= 150 && number < 200)
+            {
+                newValue = 175;
+            }
+            else
+            {
+                newValue = 200;
+            }
 
             //if (number >= 0 && number < 85)
             //{
@@ -240,18 +240,18 @@ namespace ComputerVision
             //    newValue = 127;
             //}
 
-            if (number < 100)
-            {
-                number = 0;
-            }
-            else if (number > 200)
-            {
-                number = 200;
-            }
-            else
-            {
-                newValue = Convert.ToInt32(number);
-            }
+            //if (number < 100)
+            //{
+            //    number = 0;
+            //}
+            //else if (number > 200)
+            //{
+            //    number = 200;
+            //}
+            //else
+            //{
+            //    newValue = Convert.ToInt32(number);
+            //}
 
             return newValue;
         }
