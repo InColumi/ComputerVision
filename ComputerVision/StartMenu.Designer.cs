@@ -28,14 +28,14 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartMenu));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -51,6 +51,8 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLaba2MainColorSourse = new System.Windows.Forms.PictureBox();
+            this.splitter6 = new System.Windows.Forms.Splitter();
             this.pictureBoxLaba2MainColorInput = new System.Windows.Forms.PictureBox();
             this.splitter4 = new System.Windows.Forms.Splitter();
             this.pictureBoxLaba2MainColorOutput = new System.Windows.Forms.PictureBox();
@@ -62,8 +64,10 @@
             this.pictureBoxLaba2TransformByFunctionInput = new System.Windows.Forms.PictureBox();
             this.splitter5 = new System.Windows.Forms.Splitter();
             this.pictureBoxLaba2TransformByFunctionOutput = new System.Windows.Forms.PictureBox();
-            this.splitter6 = new System.Windows.Forms.Splitter();
-            this.pictureBoxLaba2MainColorSourse = new System.Windows.Forms.PictureBox();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartRGB)).BeginInit();
@@ -76,6 +80,7 @@
             this.tabPage4.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2MainColorSourse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2MainColorInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2MainColorOutput)).BeginInit();
             this.tabPage6.SuspendLayout();
@@ -84,7 +89,8 @@
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2TransformByFunctionInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2TransformByFunctionOutput)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2MainColorSourse)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            this.tabControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -113,41 +119,41 @@
             // 
             // chartRGB
             // 
-            chartArea5.AxisY.IsMarginVisible = false;
-            chartArea5.Name = "ChartAreaRed";
-            chartArea6.AxisY.IsMarginVisible = false;
-            chartArea6.Name = "ChartAreaGreen";
-            chartArea7.AxisY.IsMarginVisible = false;
-            chartArea7.Name = "ChartAreaBlue";
-            chartArea8.AxisY.IsMarginVisible = false;
-            chartArea8.Name = "ChartAreaAll";
-            this.chartRGB.ChartAreas.Add(chartArea5);
-            this.chartRGB.ChartAreas.Add(chartArea6);
-            this.chartRGB.ChartAreas.Add(chartArea7);
-            this.chartRGB.ChartAreas.Add(chartArea8);
+            chartArea1.AxisY.IsMarginVisible = false;
+            chartArea1.Name = "ChartAreaRed";
+            chartArea2.AxisY.IsMarginVisible = false;
+            chartArea2.Name = "ChartAreaGreen";
+            chartArea3.AxisY.IsMarginVisible = false;
+            chartArea3.Name = "ChartAreaBlue";
+            chartArea4.AxisY.IsMarginVisible = false;
+            chartArea4.Name = "ChartAreaAll";
+            this.chartRGB.ChartAreas.Add(chartArea1);
+            this.chartRGB.ChartAreas.Add(chartArea2);
+            this.chartRGB.ChartAreas.Add(chartArea3);
+            this.chartRGB.ChartAreas.Add(chartArea4);
             this.chartRGB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartRGB.Location = new System.Drawing.Point(539, 3);
             this.chartRGB.Name = "chartRGB";
-            series5.ChartArea = "ChartAreaRed";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series5.Color = System.Drawing.Color.Red;
-            series5.Name = "SeriesRed";
-            series6.ChartArea = "ChartAreaGreen";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series6.Color = System.Drawing.Color.Lime;
-            series6.Name = "SeriesGreen";
-            series7.ChartArea = "ChartAreaBlue";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series7.Color = System.Drawing.Color.Blue;
-            series7.Name = "SeriesBlue";
-            series8.ChartArea = "ChartAreaAll";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series8.Color = System.Drawing.Color.Black;
-            series8.Name = "SeriesAll";
-            this.chartRGB.Series.Add(series5);
-            this.chartRGB.Series.Add(series6);
-            this.chartRGB.Series.Add(series7);
-            this.chartRGB.Series.Add(series8);
+            series1.ChartArea = "ChartAreaRed";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series1.Color = System.Drawing.Color.Red;
+            series1.Name = "SeriesRed";
+            series2.ChartArea = "ChartAreaGreen";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series2.Color = System.Drawing.Color.Lime;
+            series2.Name = "SeriesGreen";
+            series3.ChartArea = "ChartAreaBlue";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series3.Color = System.Drawing.Color.Blue;
+            series3.Name = "SeriesBlue";
+            series4.ChartArea = "ChartAreaAll";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series4.Color = System.Drawing.Color.Black;
+            series4.Name = "SeriesAll";
+            this.chartRGB.Series.Add(series1);
+            this.chartRGB.Series.Add(series2);
+            this.chartRGB.Series.Add(series3);
+            this.chartRGB.Series.Add(series4);
             this.chartRGB.Size = new System.Drawing.Size(718, 552);
             this.chartRGB.TabIndex = 2;
             this.chartRGB.Text = "chart1";
@@ -188,6 +194,7 @@
             // 
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Location = new System.Drawing.Point(3, 3);
             this.tabControl2.Name = "tabControl2";
@@ -276,6 +283,28 @@
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Коррекция с опорным цветом";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxLaba2MainColorSourse
+            // 
+            this.pictureBoxLaba2MainColorSourse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxLaba2MainColorSourse.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLaba2MainColorSourse.Image")));
+            this.pictureBoxLaba2MainColorSourse.Location = new System.Drawing.Point(3, 251);
+            this.pictureBoxLaba2MainColorSourse.Name = "pictureBoxLaba2MainColorSourse";
+            this.pictureBoxLaba2MainColorSourse.Size = new System.Drawing.Size(682, 240);
+            this.pictureBoxLaba2MainColorSourse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLaba2MainColorSourse.TabIndex = 12;
+            this.pictureBoxLaba2MainColorSourse.TabStop = false;
+            this.pictureBoxLaba2MainColorSourse.Click += new System.EventHandler(this.pictureBoxLaba2MainColorSourse_Click);
+            // 
+            // splitter6
+            // 
+            this.splitter6.BackColor = System.Drawing.Color.Black;
+            this.splitter6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitter6.Location = new System.Drawing.Point(3, 246);
+            this.splitter6.Name = "splitter6";
+            this.splitter6.Size = new System.Drawing.Size(682, 5);
+            this.splitter6.TabIndex = 11;
+            this.splitter6.TabStop = false;
             // 
             // pictureBoxLaba2MainColorInput
             // 
@@ -404,27 +433,46 @@
             this.pictureBoxLaba2TransformByFunctionOutput.TabIndex = 8;
             this.pictureBoxLaba2TransformByFunctionOutput.TabStop = false;
             // 
-            // splitter6
+            // tabPage7
             // 
-            this.splitter6.BackColor = System.Drawing.Color.Black;
-            this.splitter6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitter6.Location = new System.Drawing.Point(3, 246);
-            this.splitter6.Name = "splitter6";
-            this.splitter6.Size = new System.Drawing.Size(682, 5);
-            this.splitter6.TabIndex = 11;
-            this.splitter6.TabStop = false;
+            this.tabPage7.Controls.Add(this.tabControl3);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(1246, 526);
+            this.tabPage7.TabIndex = 2;
+            this.tabPage7.Text = "Коррекция на основе гистограммы";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // pictureBoxLaba2MainColorSourse
+            // tabControl3
             // 
-            this.pictureBoxLaba2MainColorSourse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxLaba2MainColorSourse.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLaba2MainColorSourse.Image")));
-            this.pictureBoxLaba2MainColorSourse.Location = new System.Drawing.Point(3, 251);
-            this.pictureBoxLaba2MainColorSourse.Name = "pictureBoxLaba2MainColorSourse";
-            this.pictureBoxLaba2MainColorSourse.Size = new System.Drawing.Size(682, 240);
-            this.pictureBoxLaba2MainColorSourse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLaba2MainColorSourse.TabIndex = 12;
-            this.pictureBoxLaba2MainColorSourse.TabStop = false;
-            this.pictureBoxLaba2MainColorSourse.Click += new System.EventHandler(this.pictureBoxLaba2MainColorSourse_Click);
+            this.tabControl3.Controls.Add(this.tabPage9);
+            this.tabControl3.Controls.Add(this.tabPage10);
+            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl3.Location = new System.Drawing.Point(0, 0);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(1246, 526);
+            this.tabControl3.TabIndex = 0;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(1238, 500);
+            this.tabPage9.TabIndex = 0;
+            this.tabPage9.Text = "Нормализация гистограммы";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(1238, 500);
+            this.tabPage10.TabIndex = 1;
+            this.tabPage10.Text = "Эквализация гистограммы";
+            this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // StartMenu
             // 
@@ -449,6 +497,7 @@
             this.tabPage4.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2MainColorSourse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2MainColorInput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2MainColorOutput)).EndInit();
             this.tabPage6.ResumeLayout(false);
@@ -457,7 +506,8 @@
             this.tabPage8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2TransformByFunctionInput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2TransformByFunctionOutput)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2MainColorSourse)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -490,6 +540,10 @@
         private System.Windows.Forms.PictureBox pictureBoxLaba2TransformByFunctionOutput;
         private System.Windows.Forms.PictureBox pictureBoxLaba2MainColorSourse;
         private System.Windows.Forms.Splitter splitter6;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.TabPage tabPage10;
     }
 }
 

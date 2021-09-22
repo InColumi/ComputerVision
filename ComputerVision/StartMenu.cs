@@ -189,10 +189,96 @@ namespace ComputerVision
             return image;
         }
 
-        //public Image GetTransformByFunction(string pathPhoto, PictureBox pictureBoxOutput)
-        //{
+        private Color GetColorFromFunction(Color colorInput)
+        {
+            return Color.FromArgb(TransformValue(colorInput.R), TransformValue(colorInput.G), TransformValue(colorInput.B));
+        }
 
-        //}
+        private int TransformValue(double number)
+        {
+            int newValue = 0;
+            //if (number >= 0 && number < 50)
+            //{
+            //    newValue = 25;
+            //}
+            //else if(number >= 50 && number < 100)  
+            //{
+            //    newValue = 75;
+            //}
+            //else if (number >= 100 && number < 150)
+            //{
+            //    newValue = 125;
+            //}
+            //else if (number >= 150 && number < 200)
+            //{
+            //    newValue = 175;
+            //}
+            //else
+            //{
+            //    newValue = 200;
+            //}
+
+            //if (number >= 0 && number < 85)
+            //{
+            //    newValue = 42;
+            //}
+            //else if (number >= 85 && number < 170)
+            //{
+            //    newValue = 127;
+            //}
+            //else
+            //{
+            //    newValue = 212;
+            //}
+
+            //if (number >= 0 && number < 127)
+            //{
+            //    newValue = 64;
+            //}
+            //else
+            //{
+            //    newValue = 127;
+            //}
+
+            if (number < 100)
+            {
+                number = 0;
+            }
+            else if (number > 200)
+            {
+                number = 200;
+            }
+            else
+            {
+                newValue = Convert.ToInt32(number);
+            }
+
+            return newValue;
+        }
+
+        public Image GetTransformByFunction(string pathPhoto)
+        {
+            Bitmap image = new Bitmap(pathPhoto);
+
+            int width = image.Width;
+            int height = image.Height;
+
+            Color pixel;
+            int minR = 0;
+            int minG = 0;
+            int minB = 0;
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    pixel = image.GetPixel(i, j);
+
+                    image.SetPixel(i, j, GetColorFromFunction(pixel));
+                }
+            }
+
+            return image;
+        }
 
         private void InvokeMethodByName(string name, PictureBox input, PictureBox output = null)
         {
@@ -220,7 +306,7 @@ namespace ComputerVision
                         newImage = GetTransformToMainColor(pathToFile, pictureBoxLaba2MainColorSourse.Image);
                         break;
                     case "GetTransformByFunction":
-                        //newImage = GetTransformByFunction(pathToFile);
+                        newImage = GetTransformByFunction(pathToFile);
                         break;
                     default:
                         MessageBox.Show("Error in InvokeMethodByName.");
