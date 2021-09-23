@@ -12,46 +12,45 @@ namespace ComputerVision
             InitializeComponent();
         }
 
+        //public void CountColorsAndAddToChart(Image inputImage)
+        //{
+        //    ClearChart();
+        //    Bitmap image = new Bitmap(inputImage);
+        //    uint countColors = 255;
+        //    Dictionary<uint, uint> colorsRed = new Dictionary<uint, uint>();
+        //    Dictionary<uint, uint> colorsGreen = new Dictionary<uint, uint>();
+        //    Dictionary<uint, uint> colorsBlue = new Dictionary<uint, uint>();
+        //    Dictionary<uint, uint> colorsAll = new Dictionary<uint, uint>();
+        //    for (uint i = 0; i <= countColors; i++)
+        //    {
+        //        colorsRed.Add(i, 0);
+        //        colorsGreen.Add(i, 0);
+        //        colorsBlue.Add(i, 0);
+        //        colorsAll.Add(i, 0);
+        //    }
 
-        public void CountColorsAndAddToChart(string pathPhoto)
-        {
-            ClearChart();
-            Bitmap image = new Bitmap(pathPhoto);
-            uint countColors = 255;
-            Dictionary<uint, uint> colorsRed = new Dictionary<uint, uint>();
-            Dictionary<uint, uint> colorsGreen = new Dictionary<uint, uint>();
-            Dictionary<uint, uint> colorsBlue = new Dictionary<uint, uint>();
-            Dictionary<uint, uint> colorsAll = new Dictionary<uint, uint>();
-            for (uint i = 0; i <= countColors; i++)
-            {
-                colorsRed.Add(i, 0);
-                colorsGreen.Add(i, 0);
-                colorsBlue.Add(i, 0);
-                colorsAll.Add(i, 0);
-            }
+        //    Color pixel;
+        //    for (int i = 0; i < image.Width; i++)
+        //    {
+        //        for (int j = 0; j < image.Height; j++)
+        //        {
+        //            pixel = image.GetPixel(i, j);
+        //            colorsRed[pixel.R]++;
+        //            colorsGreen[pixel.G]++;
+        //            colorsBlue[pixel.B]++;
+        //        }
+        //    }
 
-            Color pixel;
-            for (int i = 0; i < image.Width; i++)
-            {
-                for (int j = 0; j < image.Height; j++)
-                {
-                    pixel = image.GetPixel(i, j);
-                    colorsRed[pixel.R]++;
-                    colorsGreen[pixel.G]++;
-                    colorsBlue[pixel.B]++;
-                }
-            }
+        //    for (uint i = 0; i <= countColors; i++)
+        //    {
+        //        colorsAll[i] = colorsRed[i] + colorsGreen[i] + colorsBlue[i];
+        //    }
 
-            for (uint i = 0; i <= countColors; i++)
-            {
-                colorsAll[i] = colorsRed[i] + colorsGreen[i] + colorsBlue[i];
-            }
-
-            AddPointsToChart("SeriesRed", colorsRed);
-            AddPointsToChart("SeriesGreen", colorsGreen);
-            AddPointsToChart("SeriesBlue", colorsBlue);
-            AddPointsToChart("SeriesAll", colorsAll);
-        }
+        //    AddPointsToChart("SeriesRed", colorsRed);
+        //    AddPointsToChart("SeriesGreen", colorsGreen);
+        //    AddPointsToChart("SeriesBlue", colorsBlue);
+        //    AddPointsToChart("SeriesAll", colorsAll);
+        //}
 
         private void ClearChart()
         {
@@ -61,30 +60,22 @@ namespace ComputerVision
             chartRGB.Series["SeriesAll"].Points.Clear();
         }
 
-        private void AddPointsToChart(string seriesName, Dictionary<uint, uint> points)
+        private Image GetGrayPhoto(Image inputImage)
         {
-            for (uint i = 0; i <= 255; i++)
-            {
-                chartRGB.Series[seriesName].Points.AddXY(i, points[i]);
-            }
-        }
-
-        private Image GetGrayPhoto(string pathPhoto)
-        {
-            Bitmap imageGray = new Bitmap(pathPhoto);
-            Bitmap imageGray2 = new Bitmap(pathPhoto);
+            Bitmap imageGray = new Bitmap(inputImage);
+            //Bitmap imageGray2 = new Bitmap(inputImage);
             Color pixel;
             int grayColor;
-            int grayColor2;
+            //int grayColor2;
             for (int i = 0; i < imageGray.Width; i++)
             {
                 for (int j = 0; j < imageGray.Height; j++)
                 {
                     pixel = imageGray.GetPixel(i, j);
                     grayColor = Convert.ToInt16(pixel.R * 0.3 + pixel.G * 0.59 + pixel.B * 0.11);
-                    grayColor2 = Convert.ToInt16((pixel.R + pixel.G + pixel.B) / 3.0);
+                    //grayColor2 = Convert.ToInt16((pixel.R + pixel.G + pixel.B) / 3.0);
                     imageGray.SetPixel(i, j, Color.FromArgb(grayColor, grayColor, grayColor));
-                    imageGray2.SetPixel(i, j, Color.FromArgb(grayColor, grayColor, grayColor));
+                    //imageGray2.SetPixel(i, j, Color.FromArgb(grayColor, grayColor, grayColor));
                 }
             }
             return imageGray;
@@ -280,23 +271,30 @@ namespace ComputerVision
             return image;
         }
 
+        private void MakeNormalGistogramm(Image inputImage)
+        {
+            Image grayPhoto = GetGrayPhoto(inputImage);
+
+        }
+
         private void InvokeMethodByName(string name, PictureBox input, PictureBox output = null)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             string pathToFile = "";
             Image newImage;
+            Image imageInput;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 pathToFile = openFileDialog.FileName;
                 newImage = Image.FromFile(pathToFile);
-                input.Image = newImage;
+                imageInput = newImage;
                 switch (name)
                 {
                     case "CountColorsAndAddToChart":
-                        CountColorsAndAddToChart(pathToFile);
+                        //CountColorsAndAddToChart(imageInput);
                         break;
                     case "GetGrayPhoto":
-                        newImage = GetGrayPhoto(pathToFile);
+                        newImage = GetGrayPhoto(imageInput);
                         break;
                     case "GetTransformGrayWorld":
                         newImage = GetTransformGrayWorld(pathToFile);
@@ -309,6 +307,7 @@ namespace ComputerVision
                         newImage = GetTransformByFunction(pathToFile);
                         break;
                     default:
+
                         MessageBox.Show("Error in InvokeMethodByName.");
                         break;
                 }
@@ -319,9 +318,45 @@ namespace ComputerVision
             }
         }
 
+        private void MainInvoke(string nameMethod, PictureBox pictureSourse)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            string pathToFile = "";
+            Image newImage;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pathToFile = openFileDialog.FileName;
+                newImage = Image.FromFile(pathToFile);
+                pictureSourse.Image = newImage;
+                TransformImage transformImage = new TransformImage(newImage);
+                switch (nameMethod)
+                {
+                    case "CountColorsAndAddToChart":
+                        ClearChart();
+                        var colorR = transformImage.GetDictionaryColoRed();
+                        var colorG = transformImage.GetDictionaryColorGreen();
+                        var colorB = transformImage.GetDictionaryColorBlue();
+                        var colorAll = transformImage.GetDictionaryAllColors();
+                        for (int i = 0; i <= 255; i++)
+                        {
+                            chartRGB.Series["SeriesRed"].Points.AddXY(i, colorR[i]);
+                            chartRGB.Series["SeriesGreen"].Points.AddXY(i, colorG[i]);
+                            chartRGB.Series["SeriesBlue"].Points.AddXY(i, colorB[i]);
+                            chartRGB.Series["SeriesAll"].Points.AddXY(i, colorAll[i]);
+                        }
+                        break;
+                    case "GetGrayPhoto":
+                        break;
+                    default:
+                        Console.WriteLine();
+                        throw new Exception($"Undefined name {nameMethod}");
+                }
+            }
+        }
+
         private void pictureBoxInputImageLaba1_Click(object sender, EventArgs e)
         {
-            InvokeMethodByName("CountColorsAndAddToChart", pictureBoxLaba1Input);
+            MainInvoke("CountColorsAndAddToChart", pictureBoxLaba1Input);
         }
 
         private void pictureBoxInputImageLaba2Gray_Click(object sender, EventArgs e)
@@ -354,6 +389,20 @@ namespace ComputerVision
                 pathToFile = openFileDialog.FileName;
                 newImage = Image.FromFile(pathToFile);
                 pictureBoxLaba2MainColorSourse.Image = newImage;
+
+            }
+        }
+
+        private void pictureBoxLaba2NormaGistogramma_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            string pathToFile = "";
+            Image newImage;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pathToFile = openFileDialog.FileName;
+                newImage = Image.FromFile(pathToFile);
+                pictureBoxLaba2NormaGistogramma.Image = newImage;
 
             }
         }
