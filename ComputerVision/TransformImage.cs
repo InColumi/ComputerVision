@@ -119,7 +119,7 @@ namespace ComputerVision
 
             int width = bitImage.Width;
             int heigth = bitImage.Height;
-
+            int size = width * heigth;
             Color pixel;
             for (int i = 0; i < width; i++)
             {
@@ -132,7 +132,7 @@ namespace ComputerVision
                 }
             }
 
-            return Color.FromArgb(countR / Size, countG / Size, countB / Size);
+            return Color.FromArgb(countR / size, countG / size, countB / size);
         }
 
         public Image GetTransformGrayWorld()
@@ -165,11 +165,11 @@ namespace ComputerVision
             return result;
         }
 
-        public Image GetTransformToMainColor(Bitmap sourse)
+        public Image GetTransformToMainColor(Bitmap destination)
         {
             Bitmap result = new Bitmap(_bitImage);
             Color averageColorSouse = GetAverageColor(_bitImage);
-            Color averageColorDestination = GetAverageColor(sourse);
+            Color averageColorDestination = GetAverageColor(destination);
 
             double aveR = averageColorDestination.R / Convert.ToDouble(averageColorSouse.R);
             double aveG = averageColorDestination.G / Convert.ToDouble(averageColorSouse.G);

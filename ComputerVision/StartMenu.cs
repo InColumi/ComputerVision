@@ -60,222 +60,216 @@ namespace ComputerVision
             chartRGB.Series["SeriesAll"].Points.Clear();
         }
 
-        private Image GetGrayPhoto(Image inputImage)
-        {
-            Bitmap imageGray = new Bitmap(inputImage);
-            //Bitmap imageGray2 = new Bitmap(inputImage);
-            Color pixel;
-            int grayColor;
-            //int grayColor2;
-            for (int i = 0; i < imageGray.Width; i++)
-            {
-                for (int j = 0; j < imageGray.Height; j++)
-                {
-                    pixel = imageGray.GetPixel(i, j);
-                    grayColor = Convert.ToInt16(pixel.R * 0.3 + pixel.G * 0.59 + pixel.B * 0.11);
-                    //grayColor2 = Convert.ToInt16((pixel.R + pixel.G + pixel.B) / 3.0);
-                    imageGray.SetPixel(i, j, Color.FromArgb(grayColor, grayColor, grayColor));
-                    //imageGray2.SetPixel(i, j, Color.FromArgb(grayColor, grayColor, grayColor));
-                }
-            }
-            return imageGray;
-        }
+        //private Image GetGrayPhoto(Image inputImage)
+        //{
+        //    Bitmap imageGray = new Bitmap(inputImage);
+        //    //Bitmap imageGray2 = new Bitmap(inputImage);
+        //    Color pixel;
+        //    int grayColor;
+        //    //int grayColor2;
+        //    for (int i = 0; i < imageGray.Width; i++)
+        //    {
+        //        for (int j = 0; j < imageGray.Height; j++)
+        //        {
+        //            pixel = imageGray.GetPixel(i, j);
+        //            grayColor = Convert.ToInt16(pixel.R * 0.3 + pixel.G * 0.59 + pixel.B * 0.11);
+        //            //grayColor2 = Convert.ToInt16((pixel.R + pixel.G + pixel.B) / 3.0);
+        //            imageGray.SetPixel(i, j, Color.FromArgb(grayColor, grayColor, grayColor));
+        //            //imageGray2.SetPixel(i, j, Color.FromArgb(grayColor, grayColor, grayColor));
+        //        }
+        //    }
+        //    return imageGray;
+        //}
 
-        private Color GetAverage(Image sourse)
-        {
-            Bitmap image = new Bitmap(sourse);
-            int countR = 0;
-            int countG = 0;
-            int countB = 0;
+        //private Color GetAverage(Image sourse)
+        //{
+        //    Bitmap image = new Bitmap(sourse);
+        //    int countR = 0;
+        //    int countG = 0;
+        //    int countB = 0;
 
-            int width = image.Width;
-            int height = image.Height;
-            int size = width * height;
+        //    int width = image.Width;
+        //    int height = image.Height;
+        //    int size = width * height;
 
-            Color pixel;
-            for (int i = 0; i < width; i++)
-            {
-                for (int j = 0; j < height; j++)
-                {
-                    pixel = image.GetPixel(i, j);
-                    countR += pixel.R;
-                    countG += pixel.G;
-                    countB += pixel.B;
-                }
-            }
-            countR /= size;
-            countG /= size;
-            countB /= size;
+        //    Color pixel;
+        //    for (int i = 0; i < width; i++)
+        //    {
+        //        for (int j = 0; j < height; j++)
+        //        {
+        //            pixel = image.GetPixel(i, j);
+        //            countR += pixel.R;
+        //            countG += pixel.G;
+        //            countB += pixel.B;
+        //        }
+        //    }
+        //    countR /= size;
+        //    countG /= size;
+        //    countB /= size;
 
-            return Color.FromArgb(countR, countG, countB);
-        }
+        //    return Color.FromArgb(countR, countG, countB);
+        //}
 
-        private Image GetTransformGrayWorld(string pathPhoto)
-        {
-            Bitmap image = new Bitmap(pathPhoto);
+        //private Image GetTransformGrayWorld(string pathPhoto)
+        //{
+        //    Bitmap image = new Bitmap(pathPhoto);
 
-            int width = image.Width;
-            int height = image.Height;
+        //    int width = image.Width;
+        //    int height = image.Height;
 
-            Color averageColor = GetAverage(image);
+        //    Color averageColor = GetAverage(image);
 
-            double avg = (averageColor.R + averageColor.G + averageColor.B) / 3.0;
-            double avgR = avg / averageColor.R;
-            double avgG = avg / averageColor.G;
-            double avgB = avg / averageColor.B;
+        //    double avg = (averageColor.R + averageColor.G + averageColor.B) / 3.0;
+        //    double avgR = avg / averageColor.R;
+        //    double avgG = avg / averageColor.G;
+        //    double avgB = avg / averageColor.B;
 
-            Color pixel;
-            int minR = 0;
-            int minG = 0;
-            int minB = 0;
-            for (int i = 0; i < width; i++)
-            {
-                for (int j = 0; j < height; j++)
-                {
-                    pixel = image.GetPixel(i, j);
-                    minR = GetMin(Convert.ToInt16(pixel.R * avgR));
-                    minG = GetMin(Convert.ToInt16(pixel.G * avgG));
-                    minB = GetMin(Convert.ToInt16(pixel.B * avgB));
-                    image.SetPixel(i, j, Color.FromArgb(minR, minG, minB));
-                }
-            }
+        //    Color pixel;
+        //    int minR = 0;
+        //    int minG = 0;
+        //    int minB = 0;
+        //    for (int i = 0; i < width; i++)
+        //    {
+        //        for (int j = 0; j < height; j++)
+        //        {
+        //            pixel = image.GetPixel(i, j);
+        //            minR = GetMin(Convert.ToInt16(pixel.R * avgR));
+        //            minG = GetMin(Convert.ToInt16(pixel.G * avgG));
+        //            minB = GetMin(Convert.ToInt16(pixel.B * avgB));
+        //            image.SetPixel(i, j, Color.FromArgb(minR, minG, minB));
+        //        }
+        //    }
 
-            return image;
-        }
+        //    return image;
+        //}
 
-        private int GetMin(int number)
-        {
-            return (number > 255) ? 255 : number;
-        }
+        //private int GetMin(int number)
+        //{
+        //    return (number > 255) ? 255 : number;
+        //}
 
-        public Image GetTransformToMainColor(string pathPhoto, Image sourse)
-        {
-            Bitmap image = new Bitmap(pathPhoto);
+        //public Image GetTransformToMainColor(string pathPhoto, Image sourse)
+        //{
+        //    Bitmap image = new Bitmap(pathPhoto);
 
-            int width = image.Width;
-            int height = image.Height;
+        //    int width = image.Width;
+        //    int height = image.Height;
 
-            Color averageColorSouse = GetAverage(image);
-            Color averageColorDestination = GetAverage(sourse);
+        //    Color averageColorSouse = GetAverage(image);
+        //    Color averageColorDestination = GetAverage(sourse);
 
-            double aveR = averageColorDestination.R / Convert.ToDouble(averageColorSouse.R);
-            double aveG = averageColorDestination.G / Convert.ToDouble(averageColorSouse.G);
-            double aveB = averageColorDestination.B / Convert.ToDouble(averageColorSouse.B);
+        //    double aveR = averageColorDestination.R / Convert.ToDouble(averageColorSouse.R);
+        //    double aveG = averageColorDestination.G / Convert.ToDouble(averageColorSouse.G);
+        //    double aveB = averageColorDestination.B / Convert.ToDouble(averageColorSouse.B);
 
-            int minR = 0;
-            int minG = 0;
-            int minB = 0;
-            Color pixel;
-            for (int i = 0; i < width; i++)
-            {
-                for (int j = 0; j < height; j++)
-                {
-                    pixel = image.GetPixel(i, j);
-                    minR = GetMin(Convert.ToInt16(pixel.R * aveR));
-                    minG = GetMin(Convert.ToInt16(pixel.G * aveG));
-                    minB = GetMin(Convert.ToInt16(pixel.B * aveB));
-                    image.SetPixel(i, j, Color.FromArgb(minR, minG, minB));
-                }
-            }
-            return image;
-        }
+        //    int minR = 0;
+        //    int minG = 0;
+        //    int minB = 0;
+        //    Color pixel;
+        //    for (int i = 0; i < width; i++)
+        //    {
+        //        for (int j = 0; j < height; j++)
+        //        {
+        //            pixel = image.GetPixel(i, j);
+        //            minR = GetMin(Convert.ToInt16(pixel.R * aveR));
+        //            minG = GetMin(Convert.ToInt16(pixel.G * aveG));
+        //            minB = GetMin(Convert.ToInt16(pixel.B * aveB));
+        //            image.SetPixel(i, j, Color.FromArgb(minR, minG, minB));
+        //        }
+        //    }
+        //    return image;
+        //}
 
-        private Color GetColorFromFunction(Color colorInput)
-        {
-            return Color.FromArgb(TransformValue(colorInput.R), TransformValue(colorInput.G), TransformValue(colorInput.B));
-        }
+        //private Color GetColorFromFunction(Color colorInput)
+        //{
+        //    return Color.FromArgb(TransformValue(colorInput.R), TransformValue(colorInput.G), TransformValue(colorInput.B));
+        //}
 
-        private int TransformValue(double number)
-        {
-            int newValue = 0;
-            if (number >= 0 && number < 50)
-            {
-                newValue = 25;
-            }
-            else if (number >= 50 && number < 100)
-            {
-                newValue = 75;
-            }
-            else if (number >= 100 && number < 150)
-            {
-                newValue = 125;
-            }
-            else if (number >= 150 && number < 200)
-            {
-                newValue = 175;
-            }
-            else
-            {
-                newValue = 200;
-            }
+        //private int TransformValue(double number)
+        //{
+        //    int newValue = 0;
+        //    if (number >= 0 && number < 50)
+        //    {
+        //        newValue = 25;
+        //    }
+        //    else if (number >= 50 && number < 100)
+        //    {
+        //        newValue = 75;
+        //    }
+        //    else if (number >= 100 && number < 150)
+        //    {
+        //        newValue = 125;
+        //    }
+        //    else if (number >= 150 && number < 200)
+        //    {
+        //        newValue = 175;
+        //    }
+        //    else
+        //    {
+        //        newValue = 200;
+        //    }
 
-            //if (number >= 0 && number < 85)
-            //{
-            //    newValue = 42;
-            //}
-            //else if (number >= 85 && number < 170)
-            //{
-            //    newValue = 127;
-            //}
-            //else
-            //{
-            //    newValue = 212;
-            //}
+        //    //if (number >= 0 && number < 85)
+        //    //{
+        //    //    newValue = 42;
+        //    //}
+        //    //else if (number >= 85 && number < 170)
+        //    //{
+        //    //    newValue = 127;
+        //    //}
+        //    //else
+        //    //{
+        //    //    newValue = 212;
+        //    //}
 
-            //if (number >= 0 && number < 127)
-            //{
-            //    newValue = 64;
-            //}
-            //else
-            //{
-            //    newValue = 127;
-            //}
+        //    //if (number >= 0 && number < 127)
+        //    //{
+        //    //    newValue = 64;
+        //    //}
+        //    //else
+        //    //{
+        //    //    newValue = 127;
+        //    //}
 
-            //if (number < 100)
-            //{
-            //    number = 0;
-            //}
-            //else if (number > 200)
-            //{
-            //    number = 200;
-            //}
-            //else
-            //{
-            //    newValue = Convert.ToInt32(number);
-            //}
+        //    //if (number < 100)
+        //    //{
+        //    //    number = 0;
+        //    //}
+        //    //else if (number > 200)
+        //    //{
+        //    //    number = 200;
+        //    //}
+        //    //else
+        //    //{
+        //    //    newValue = Convert.ToInt32(number);
+        //    //}
 
-            return newValue;
-        }
+        //    return newValue;
+        //}
 
-        public Image GetTransformByFunction(string pathPhoto)
-        {
-            Bitmap image = new Bitmap(pathPhoto);
+        //public Image GetTransformByFunction(string pathPhoto)
+        //{
+        //    Bitmap image = new Bitmap(pathPhoto);
 
-            int width = image.Width;
-            int height = image.Height;
+        //    int width = image.Width;
+        //    int height = image.Height;
 
-            Color pixel;
-            int minR = 0;
-            int minG = 0;
-            int minB = 0;
-            for (int i = 0; i < width; i++)
-            {
-                for (int j = 0; j < height; j++)
-                {
-                    pixel = image.GetPixel(i, j);
+        //    Color pixel;
+        //    int minR = 0;
+        //    int minG = 0;
+        //    int minB = 0;
+        //    for (int i = 0; i < width; i++)
+        //    {
+        //        for (int j = 0; j < height; j++)
+        //        {
+        //            pixel = image.GetPixel(i, j);
 
-                    image.SetPixel(i, j, GetColorFromFunction(pixel));
-                }
-            }
+        //            image.SetPixel(i, j, GetColorFromFunction(pixel));
+        //        }
+        //    }
 
-            return image;
-        }
-
-        private void MakeNormalGistogramm(Image inputImage)
-        {
-            Image grayPhoto = GetGrayPhoto(inputImage);
-
-        }
+        //    return image;
+        //}
 
         private void InvokeMethodByName(string name, PictureBox input, PictureBox output = null)
         {
@@ -294,17 +288,17 @@ namespace ComputerVision
                         //CountColorsAndAddToChart(imageInput);
                         break;
                     case "GetGrayPhoto":
-                        newImage = GetGrayPhoto(imageInput);
+                        //newImage = GetGrayPhoto(imageInput);
                         break;
                     case "GetTransformGrayWorld":
-                        newImage = GetTransformGrayWorld(pathToFile);
+                        //newImage = GetTransformGrayWorld(pathToFile);
                         output.Image = newImage;
                         break;
                     case "GetTransformToMainColor":
-                        newImage = GetTransformToMainColor(pathToFile, pictureBoxLaba2MainColorSourse.Image);
+                        //newImage = GetTransformToMainColor(pathToFile, pictureBoxLaba2MainColorSourse.Image);
                         break;
                     case "GetTransformByFunction":
-                        newImage = GetTransformByFunction(pathToFile);
+                        //newImage = GetTransformByFunction(pathToFile);
                         break;
                     default:
 
@@ -348,6 +342,14 @@ namespace ComputerVision
                     case "GetGrayPhoto":
                         pictureBoxOutputImageLaba2Gray.Image = transformImage.GetGrayPhoto();
                         break;
+                    case "GetTransformToMainColor":
+                        pictureBoxLaba2MainColorOutput.Image = transformImage.GetTransformToMainColor(new Bitmap(pictureBoxLaba2MainColorSourse.Image));
+                        break;
+
+                    case "GetTransformGrayWorld":
+                        pictureBoxLaba2GrayWorldOutput.Image = transformImage.GetTransformGrayWorld();
+                        break;
+
                     default:
                         Console.WriteLine();
                         throw new Exception($"Undefined name {nameMethod}");
@@ -367,12 +369,12 @@ namespace ComputerVision
 
         private void pictureBoxLaba2MainColorInput_Click(object sender, EventArgs e)
         {
-            InvokeMethodByName("GetTransformToMainColor", pictureBoxLaba2MainColorInput, pictureBoxLaba2MainColorOutput);
+            MainInvoke("GetTransformToMainColor", pictureBoxLaba2MainColorInput);
         }
 
         private void pictureBoxLaba2GrayWorldInput_Click(object sender, EventArgs e)
         {
-            InvokeMethodByName("GetTransformGrayWorld", pictureBoxLaba2GrayWorldInput, pictureBoxLaba2GrayWorldOutput);
+            MainInvoke("GetTransformToMainColor", pictureBoxLaba2MainColorInput);
         }
 
         private void pictureBoxLaba2TransformByFunctionInput_Click(object sender, EventArgs e)
