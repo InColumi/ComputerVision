@@ -192,5 +192,15 @@ namespace ComputerVision
             }
             return result;
         }
+
+        public Image GetTransformByFunction()
+        {
+            return null;
+        }
+
+        private double GetValue(double value)
+        {
+            return 15 * Math.Log10(value + 1);
+        }
     }
 }
