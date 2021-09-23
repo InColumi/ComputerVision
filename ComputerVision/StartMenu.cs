@@ -374,12 +374,12 @@ namespace ComputerVision
 
         private void pictureBoxLaba2GrayWorldInput_Click(object sender, EventArgs e)
         {
-            MainInvoke("GetTransformToMainColor", pictureBoxLaba2MainColorInput);
+            MainInvoke("GetTransformGrayWorld", pictureBoxLaba2GrayWorldInput);
         }
 
         private void pictureBoxLaba2TransformByFunctionInput_Click(object sender, EventArgs e)
         {
-            InvokeMethodByName("GetTransformByFunction", pictureBoxLaba2TransformByFunctionInput, pictureBoxLaba2TransformByFunctionOutput);
+            //InvokeMethodByName("GetTransformByFunction", pictureBoxLaba2TransformByFunctionInput, pictureBoxLaba2TransformByFunctionOutput);
         }
 
         private void pictureBoxLaba2MainColorSourse_Click(object sender, EventArgs e)
