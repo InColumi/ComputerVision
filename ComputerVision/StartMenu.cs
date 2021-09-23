@@ -346,6 +346,7 @@ namespace ComputerVision
                         }
                         break;
                     case "GetGrayPhoto":
+                        pictureBoxOutputImageLaba2Gray.Image = transformImage.GetGrayPhoto();
                         break;
                     default:
                         Console.WriteLine();
@@ -361,7 +362,7 @@ namespace ComputerVision
 
         private void pictureBoxInputImageLaba2Gray_Click(object sender, EventArgs e)
         {
-            InvokeMethodByName("GetGrayPhoto", pictureBoxInputImageLaba2Gray, pictureBoxOutputImageLaba2Gray);
+            MainInvoke("GetGrayPhoto", pictureBoxInputImageLaba2Gray);
         }
 
         private void pictureBoxLaba2MainColorInput_Click(object sender, EventArgs e)
