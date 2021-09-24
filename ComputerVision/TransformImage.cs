@@ -8,15 +8,15 @@ namespace ComputerVision
     {
         private Bitmap _bitImage;
         public Image ImageInput { get; private set; }
-        public int WidthImage { get; private set; }
-        public int HeightImage { get; private set; }
-        public int Size { get; private set; }
+        public uint WidthImage { get; private set; }
+        public uint HeightImage { get; private set; }
+        public uint Size { get; private set; }
 
         public TransformImage(Image imageInput)
         {
             ImageInput = imageInput;
-            WidthImage = imageInput.Width;
-            HeightImage = imageInput.Height;
+            WidthImage = Convert.ToUInt32(imageInput.Width);
+            HeightImage = Convert.ToUInt32(imageInput.Height);
             Size = WidthImage * HeightImage;
             _bitImage = new Bitmap(ImageInput);
         }
@@ -61,7 +61,7 @@ namespace ComputerVision
             return color;
         }
 
-        public Dictionary<int, uint> GetDictionaryColoRed()
+        public Dictionary<int, uint> GetDictionaryColorRed()
         {
             return GetDictionaryColor(GetR);
         }
@@ -79,7 +79,7 @@ namespace ComputerVision
         public Dictionary<int, uint> GetDictionaryAllColors()
         {
             Dictionary<int, uint> allColors = new Dictionary<int, uint>();
-            Dictionary<int, uint> colorR = GetDictionaryColoRed();
+            Dictionary<int, uint> colorR = GetDictionaryColorRed();
             Dictionary<int, uint> colorG = GetDictionaryColorGreen();
             Dictionary<int, uint> colorB = GetDictionaryColorBlue();
             uint countColors = 255;
@@ -141,7 +141,7 @@ namespace ComputerVision
             Color averageColor = GetAverageColor(_bitImage);
 
             double avg = (averageColor.R + averageColor.G + averageColor.B) / 3.0;
-            
+
             double avgR = avg / averageColor.R;
             double avgG = avg / averageColor.G;
             double avgB = avg / averageColor.B;
@@ -197,6 +197,56 @@ namespace ComputerVision
         {
             return null;
         }
+
+        public Dictionary<int, uint> GetNormalization()
+        {
+            Bitmap result = new Bitmap(GetGrayPhoto());
+            var colors = GetDictionaryAllColors();
+            Dictionary<int, double> normalization = new Dictionary<int, double>();
+            for (int i = 0; i <= 255; i++)
+            {
+                normalization.Add(i, colors[i] / (Size * 1.0));
+            }
+
+            int numbersOfColors = (int)Size / 256;
+            Dictionary<int, uint> h = new Dictionary<int, uint>();
+            for (int i = 0; i <= 255; i++)
+            {
+                h.Add(i, 0);
+            }
+            uint sum = 0;
+            for (int i = 0; i <= 255; i++)
+            {
+                if (sum <= numbersOfColors)
+                {
+                    sum += colors[i];
+                }
+                else
+                {
+                    h[i] = sum;
+                    sum = 0;
+                }
+            }
+
+            for (int i = 1; i <= 255; i++)
+            {
+               // h[i] = h[i] / (Size * 1.0);
+            }
+
+            int color;
+            for (int i = 0; i < WidthImage; i++)
+            {
+                for (int j = 0; j < HeightImage; j++)
+                {
+                   // color = Convert.ToInt32(normalization[Math.Round(256 * )]);
+                    //SetPixel(i, j, Color.FromArgb(color, color, color)); 
+                }
+            }
+
+            return h;
+        }
+
+
 
         private double GetValue(double value)
         {

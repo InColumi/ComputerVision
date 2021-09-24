@@ -37,10 +37,10 @@
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartMenu));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.chartRGB = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -71,15 +71,15 @@
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.pictureBoxLaba2NormaGistogrammaInput = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLaba2NormaGistogrammaOutput = new System.Windows.Forms.PictureBox();
+            this.chartLaba2NormalGistorammaAfter = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.splitter9 = new System.Windows.Forms.Splitter();
             this.chartLaba2NormalGistorammaBefore = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.splitter8 = new System.Windows.Forms.Splitter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitter7 = new System.Windows.Forms.Splitter();
-            this.splitter8 = new System.Windows.Forms.Splitter();
-            this.splitter9 = new System.Windows.Forms.Splitter();
-            this.chartLaba2NormalGistorammaAfter = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pictureBoxLaba2NormaGistogrammaOutput = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLaba2NormaGistogrammaInput = new System.Windows.Forms.PictureBox();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartRGB)).BeginInit();
@@ -104,11 +104,11 @@
             this.tabPage7.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2NormaGistogrammaInput)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2NormaGistogrammaOutput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartLaba2NormalGistorammaAfter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartLaba2NormalGistorammaBefore)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartLaba2NormalGistorammaAfter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2NormaGistogrammaOutput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2NormaGistogrammaInput)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -153,19 +153,19 @@
             this.chartRGB.Location = new System.Drawing.Point(539, 3);
             this.chartRGB.Name = "chartRGB";
             series1.ChartArea = "ChartAreaRed";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
             series1.Color = System.Drawing.Color.Red;
             series1.Name = "SeriesRed";
             series2.ChartArea = "ChartAreaGreen";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
             series2.Color = System.Drawing.Color.Lime;
             series2.Name = "SeriesGreen";
             series3.ChartArea = "ChartAreaBlue";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
             series3.Color = System.Drawing.Color.Blue;
             series3.Name = "SeriesBlue";
             series4.ChartArea = "ChartAreaAll";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
             series4.Color = System.Drawing.Color.Black;
             series4.Name = "SeriesAll";
             this.chartRGB.Series.Add(series1);
@@ -487,28 +487,32 @@
             this.tabPage9.Text = "Нормализация гистограммы";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
-            // pictureBoxLaba2NormaGistogrammaInput
+            // chartLaba2NormalGistorammaAfter
             // 
-            this.pictureBoxLaba2NormaGistogrammaInput.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBoxLaba2NormaGistogrammaInput.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLaba2NormaGistogrammaInput.Image")));
-            this.pictureBoxLaba2NormaGistogrammaInput.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxLaba2NormaGistogrammaInput.Name = "pictureBoxLaba2NormaGistogrammaInput";
-            this.pictureBoxLaba2NormaGistogrammaInput.Size = new System.Drawing.Size(534, 247);
-            this.pictureBoxLaba2NormaGistogrammaInput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLaba2NormaGistogrammaInput.TabIndex = 5;
-            this.pictureBoxLaba2NormaGistogrammaInput.TabStop = false;
-            this.pictureBoxLaba2NormaGistogrammaInput.Click += new System.EventHandler(this.pictureBoxLaba2NormaGistogramma_Click);
+            chartArea5.AxisY.IsMarginVisible = false;
+            chartArea5.Name = "ChartAreaAll";
+            this.chartLaba2NormalGistorammaAfter.ChartAreas.Add(chartArea5);
+            this.chartLaba2NormalGistorammaAfter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartLaba2NormalGistorammaAfter.Location = new System.Drawing.Point(542, 255);
+            this.chartLaba2NormalGistorammaAfter.Name = "chartLaba2NormalGistorammaAfter";
+            series5.ChartArea = "ChartAreaAll";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series5.Color = System.Drawing.Color.Black;
+            series5.Name = "SeriesAll";
+            this.chartLaba2NormalGistorammaAfter.Series.Add(series5);
+            this.chartLaba2NormalGistorammaAfter.Size = new System.Drawing.Size(693, 242);
+            this.chartLaba2NormalGistorammaAfter.TabIndex = 13;
+            this.chartLaba2NormalGistorammaAfter.Text = "chart1";
             // 
-            // pictureBoxLaba2NormaGistogrammaOutput
+            // splitter9
             // 
-            this.pictureBoxLaba2NormaGistogrammaOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxLaba2NormaGistogrammaOutput.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLaba2NormaGistogrammaOutput.Image")));
-            this.pictureBoxLaba2NormaGistogrammaOutput.Location = new System.Drawing.Point(0, 247);
-            this.pictureBoxLaba2NormaGistogrammaOutput.Name = "pictureBoxLaba2NormaGistogrammaOutput";
-            this.pictureBoxLaba2NormaGistogrammaOutput.Size = new System.Drawing.Size(534, 247);
-            this.pictureBoxLaba2NormaGistogrammaOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLaba2NormaGistogrammaOutput.TabIndex = 8;
-            this.pictureBoxLaba2NormaGistogrammaOutput.TabStop = false;
+            this.splitter9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.splitter9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitter9.Location = new System.Drawing.Point(542, 250);
+            this.splitter9.Name = "splitter9";
+            this.splitter9.Size = new System.Drawing.Size(693, 5);
+            this.splitter9.TabIndex = 12;
+            this.splitter9.TabStop = false;
             // 
             // chartLaba2NormalGistorammaBefore
             // 
@@ -519,7 +523,7 @@
             this.chartLaba2NormalGistorammaBefore.Location = new System.Drawing.Point(542, 3);
             this.chartLaba2NormalGistorammaBefore.Name = "chartLaba2NormalGistorammaBefore";
             series6.ChartArea = "ChartAreaAll";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
             series6.Color = System.Drawing.Color.Black;
             series6.Name = "SeriesAll";
             this.chartLaba2NormalGistorammaBefore.Series.Add(series6);
@@ -527,15 +531,14 @@
             this.chartLaba2NormalGistorammaBefore.TabIndex = 6;
             this.chartLaba2NormalGistorammaBefore.Text = "chart1";
             // 
-            // tabPage10
+            // splitter8
             // 
-            this.tabPage10.Location = new System.Drawing.Point(4, 22);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(1238, 500);
-            this.tabPage10.TabIndex = 1;
-            this.tabPage10.Text = "Эквализация гистограммы";
-            this.tabPage10.UseVisualStyleBackColor = true;
+            this.splitter8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.splitter8.Location = new System.Drawing.Point(537, 3);
+            this.splitter8.Name = "splitter8";
+            this.splitter8.Size = new System.Drawing.Size(5, 494);
+            this.splitter8.TabIndex = 11;
+            this.splitter8.TabStop = false;
             // 
             // panel1
             // 
@@ -558,41 +561,38 @@
             this.splitter7.TabIndex = 6;
             this.splitter7.TabStop = false;
             // 
-            // splitter8
+            // pictureBoxLaba2NormaGistogrammaOutput
             // 
-            this.splitter8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.splitter8.Location = new System.Drawing.Point(537, 3);
-            this.splitter8.Name = "splitter8";
-            this.splitter8.Size = new System.Drawing.Size(5, 494);
-            this.splitter8.TabIndex = 11;
-            this.splitter8.TabStop = false;
+            this.pictureBoxLaba2NormaGistogrammaOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxLaba2NormaGistogrammaOutput.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLaba2NormaGistogrammaOutput.Image")));
+            this.pictureBoxLaba2NormaGistogrammaOutput.Location = new System.Drawing.Point(0, 247);
+            this.pictureBoxLaba2NormaGistogrammaOutput.Name = "pictureBoxLaba2NormaGistogrammaOutput";
+            this.pictureBoxLaba2NormaGistogrammaOutput.Size = new System.Drawing.Size(534, 247);
+            this.pictureBoxLaba2NormaGistogrammaOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLaba2NormaGistogrammaOutput.TabIndex = 8;
+            this.pictureBoxLaba2NormaGistogrammaOutput.TabStop = false;
             // 
-            // splitter9
+            // pictureBoxLaba2NormaGistogrammaInput
             // 
-            this.splitter9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.splitter9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitter9.Location = new System.Drawing.Point(542, 250);
-            this.splitter9.Name = "splitter9";
-            this.splitter9.Size = new System.Drawing.Size(693, 5);
-            this.splitter9.TabIndex = 12;
-            this.splitter9.TabStop = false;
+            this.pictureBoxLaba2NormaGistogrammaInput.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBoxLaba2NormaGistogrammaInput.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLaba2NormaGistogrammaInput.Image")));
+            this.pictureBoxLaba2NormaGistogrammaInput.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxLaba2NormaGistogrammaInput.Name = "pictureBoxLaba2NormaGistogrammaInput";
+            this.pictureBoxLaba2NormaGistogrammaInput.Size = new System.Drawing.Size(534, 247);
+            this.pictureBoxLaba2NormaGistogrammaInput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLaba2NormaGistogrammaInput.TabIndex = 5;
+            this.pictureBoxLaba2NormaGistogrammaInput.TabStop = false;
+            this.pictureBoxLaba2NormaGistogrammaInput.Click += new System.EventHandler(this.pictureBoxLaba2NormaGistogramma_Click);
             // 
-            // chartLaba2NormalGistorammaAfter
+            // tabPage10
             // 
-            chartArea5.AxisY.IsMarginVisible = false;
-            chartArea5.Name = "ChartAreaAll";
-            this.chartLaba2NormalGistorammaAfter.ChartAreas.Add(chartArea5);
-            this.chartLaba2NormalGistorammaAfter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartLaba2NormalGistorammaAfter.Location = new System.Drawing.Point(542, 255);
-            this.chartLaba2NormalGistorammaAfter.Name = "chartLaba2NormalGistorammaAfter";
-            series5.ChartArea = "ChartAreaAll";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series5.Color = System.Drawing.Color.Black;
-            series5.Name = "SeriesAll";
-            this.chartLaba2NormalGistorammaAfter.Series.Add(series5);
-            this.chartLaba2NormalGistorammaAfter.Size = new System.Drawing.Size(693, 242);
-            this.chartLaba2NormalGistorammaAfter.TabIndex = 13;
-            this.chartLaba2NormalGistorammaAfter.Text = "chart1";
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(1238, 500);
+            this.tabPage10.TabIndex = 1;
+            this.tabPage10.Text = "Эквализация гистограммы";
+            this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // StartMenu
             // 
@@ -629,11 +629,11 @@
             this.tabPage7.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2NormaGistogrammaInput)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2NormaGistogrammaOutput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartLaba2NormalGistorammaAfter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartLaba2NormalGistorammaBefore)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartLaba2NormalGistorammaAfter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2NormaGistogrammaOutput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2NormaGistogrammaInput)).EndInit();
             this.ResumeLayout(false);
 
 		}
