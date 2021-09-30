@@ -8,15 +8,15 @@ namespace ComputerVision
     {
         private Bitmap _bitImage;
         public Image ImageInput { get; private set; }
-        public uint WidthImage { get; private set; }
-        public uint HeightImage { get; private set; }
-        public uint Size { get; private set; }
+        public int WidthImage { get; private set; }
+        public int HeightImage { get; private set; }
+        public int Size { get; private set; }
 
         public TransformImage(Image imageInput)
         {
             ImageInput = imageInput;
-            WidthImage = Convert.ToUInt32(imageInput.Width);
-            HeightImage = Convert.ToUInt32(imageInput.Height);
+            WidthImage = imageInput.Width;
+            HeightImage = imageInput.Height;
             Size = WidthImage * HeightImage;
             _bitImage = new Bitmap(ImageInput);
         }
@@ -41,51 +41,47 @@ namespace ComputerVision
             return color.G;
         }
 
-        private Dictionary<int, uint> GetDictionaryColor(Func<Color, byte> myMethodName)
+        private int[] GetColors(Func<Color, byte> myMethodName)
         {
             uint countColors = 255;
-            Dictionary<int, uint> color = new Dictionary<int, uint>();
-            for (int i = 0; i <= countColors; i++)
-            {
-                color.Add(i, 0);
-            }
+            int[] colors = new int[256];
 
             for (int i = 0; i < WidthImage; i++)
             {
                 for (int j = 0; j < HeightImage; j++)
                 {
-                    color[myMethodName(_bitImage.GetPixel(i, j))]++;
+                    colors[myMethodName(_bitImage.GetPixel(i, j))]++;
                 }
             }
 
-            return color;
+            return colors;
         }
 
-        public Dictionary<int, uint> GetDictionaryColorRed()
+        public int[] GetColorRed()
         {
-            return GetDictionaryColor(GetR);
+            return GetColors(GetR);
         }
 
-        public Dictionary<int, uint> GetDictionaryColorGreen()
+        public int[] GetColorGreen()
         {
-            return GetDictionaryColor(GetG);
+            return GetColors(GetG);
         }
 
-        public Dictionary<int, uint> GetDictionaryColorBlue()
+        public int[] GetColorBlue()
         {
-            return GetDictionaryColor(GetB);
+            return GetColors(GetB);
         }
 
-        public Dictionary<int, uint> GetDictionaryAllColors()
+        public int[] GetAllColors()
         {
-            Dictionary<int, uint> allColors = new Dictionary<int, uint>();
-            Dictionary<int, uint> colorR = GetDictionaryColorRed();
-            Dictionary<int, uint> colorG = GetDictionaryColorGreen();
-            Dictionary<int, uint> colorB = GetDictionaryColorBlue();
+            int[] allColors = new int[256];
+            int[] colorR = GetColorRed();
+            int[] colorG = GetColorGreen();
+            int[] colorB = GetColorBlue();
             uint countColors = 255;
             for (int i = 0; i <= countColors; i++)
             {
-                allColors.Add(i, colorR[i] + colorG[i] + colorB[i]);
+                allColors[i] = colorR[i] + colorG[i] + colorB[i];
             }
 
             return allColors;
@@ -198,52 +194,51 @@ namespace ComputerVision
             return null;
         }
 
-        public Dictionary<int, uint> GetNormalization()
+        public Bitmap GetNormalizationPhoto()
         {
-            Bitmap result = new Bitmap(GetGrayPhoto());
-            var colors = GetDictionaryAllColors();
-            Dictionary<int, double> normalization = new Dictionary<int, double>();
-            for (int i = 0; i <= 255; i++)
-            {
-                normalization.Add(i, colors[i] / (Size * 1.0));
-            }
+            int countColors = 256;
+            Bitmap grayPhoto = new Bitmap(GetGrayPhoto());
+            var colors = GetAllColors();
 
-            int numbersOfColors = (int)Size / 256;
-            Dictionary<int, uint> h = new Dictionary<int, uint>();
-            for (int i = 0; i <= 255; i++)
+            int min = 0;
+            int max = 0;
+            for (int i = 0; i < countColors; i++)
             {
-                h.Add(i, 0);
-            }
-            uint sum = 0;
-            for (int i = 0; i <= 255; i++)
-            {
-                if (sum <= numbersOfColors)
+                if (colors[i] != 0)
                 {
-                    sum += colors[i];
-                }
-                else
-                {
-                    h[i] = sum;
-                    sum = 0;
+                    min = i;
+                    break;
                 }
             }
 
-            for (int i = 1; i <= 255; i++)
+            for (int i = countColors - 1; i >= 0; i--)
             {
-               // h[i] = h[i] / (Size * 1.0);
+                if (colors[i] != 0)
+                {
+                    max = i;
+                    break;
+                }
             }
 
-            int color;
+            int newMin = 0;
+            int newMax = 255;
+            double normalizationFactor = (newMax - newMin) / (double)(max - min);
+            int newColor;
+            Bitmap result = new Bitmap(WidthImage, HeightImage);
             for (int i = 0; i < WidthImage; i++)
             {
                 for (int j = 0; j < HeightImage; j++)
                 {
-                   // color = Convert.ToInt32(normalization[Math.Round(256 * )]);
-                    //SetPixel(i, j, Color.FromArgb(color, color, color)); 
+                    newColor = grayPhoto.GetPixel(i, j).R - min;
+                    newColor = (newColor < 0) ? 0 : newColor;
+                    
+                    newColor = Convert.ToInt32(newColor * normalizationFactor) + newMin;
+                    
+                    newColor = (newColor > 255) ? 255 : newColor;
+                    result.SetPixel(i, j, Color.FromArgb(newColor, newColor, newColor));
                 }
             }
-
-            return h;
+            return result;
         }
 
 

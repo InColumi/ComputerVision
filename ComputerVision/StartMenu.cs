@@ -36,10 +36,10 @@ namespace ComputerVision
                 {
                     case "CountColorsAndAddToChart":
                         ClearChart(chartRGB);
-                        var colorR = transformImage.GetDictionaryColorRed();
-                        var colorG = transformImage.GetDictionaryColorGreen();
-                        var colorB = transformImage.GetDictionaryColorBlue();
-                        var colorAll = transformImage.GetDictionaryAllColors();
+                        var colorR = transformImage.GetColorRed();
+                        var colorG = transformImage.GetColorGreen();
+                        var colorB = transformImage.GetColorBlue();
+                        var colorAll = transformImage.GetAllColors();
                         for (int i = 0; i <= 255; i++)
                         {
                             chartRGB.Series["SeriesRed"].Points.AddXY(i, colorR[i]);
@@ -63,20 +63,21 @@ namespace ComputerVision
                         break;
                     case "NormaGistogramma":
                         ClearChart(chartLaba2NormalGistorammaBefore);
-                        colorAll = transformImage.GetDictionaryAllColors();
+                        colorAll = transformImage.GetAllColors();
                         for (int i = 0; i <= 255; i++)
                         {
                             chartLaba2NormalGistorammaBefore.Series["SeriesAll"].Points.AddXY(i, colorAll[i]);
                         }
-                        //pictureBoxLaba2NormaGistogrammaOutput.Image = transformImage.GetNormalization();
-                        var newValues = transformImage.GetNormalization();
 
+                        var normalizationPhoto = transformImage.GetNormalizationPhoto();
+                        pictureBoxLaba2NormaHistogrammaOutput.Image = normalizationPhoto;
+
+                        TransformImage image = new TransformImage(normalizationPhoto);
+                        var normalizatonHist = image.GetAllColors();
                         for (int i = 0; i <= 255; i++)
                         {
-                            chartLaba2NormalGistorammaAfter.Series["SeriesAll"].Points.AddXY(i, newValues[i]);
+                            chartLaba2NormalGistorammaAfter.Series["SeriesAll"].Points.AddXY(i, normalizatonHist[i]);
                         }
-
-                        pictureBoxLaba2NormaGistogrammaOutput.Image = newImage;
                         break;
                     default:
                         Console.WriteLine();
