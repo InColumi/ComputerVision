@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 
 namespace ComputerVision
@@ -79,8 +78,7 @@ namespace ComputerVision
             int[] colorR = GetColorRed();
             int[] colorG = GetColorGreen();
             int[] colorB = GetColorBlue();
-            uint countColors = 255;
-            for (int i = 0; i <= countColors; i++)
+            for (int i = 0; i < _countColors; i++)
             {
                 allColors[i] = colorR[i] + colorG[i] + colorB[i];
             }
@@ -132,7 +130,7 @@ namespace ComputerVision
             return Color.FromArgb(countR / size, countG / size, countB / size);
         }
 
-        public Image GetTransformGrayWorld()
+        public Image GetGrayWorld()
         {
             Bitmap result = new Bitmap(_bitImage);
             Color averageColor = GetAverageColor(_bitImage);

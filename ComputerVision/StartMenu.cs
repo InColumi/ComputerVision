@@ -56,7 +56,7 @@ namespace ComputerVision
                         break;
 
                     case "GetTransformGrayWorld":
-                        pictureBoxLaba2GrayWorldOutput.Image = transformImage.GetTransformGrayWorld();
+                        pictureBoxLaba2GrayWorldOutput.Image = transformImage.GetGrayWorld();
                         break;
                     case "GetTransformByFunction":
                         pictureBoxLaba2TransformByFunctionOutput.Image = newImage;
