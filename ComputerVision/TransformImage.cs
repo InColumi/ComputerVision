@@ -7,6 +7,7 @@ namespace ComputerVision
     class TransformImage
     {
         private Bitmap _bitImage;
+        private int _countColors;
         public Image ImageInput { get; private set; }
         public int WidthImage { get; private set; }
         public int HeightImage { get; private set; }
@@ -19,6 +20,7 @@ namespace ComputerVision
             HeightImage = imageInput.Height;
             Size = WidthImage * HeightImage;
             _bitImage = new Bitmap(ImageInput);
+            _countColors = 256;
         }
 
         private int GetMin(int number)
@@ -43,8 +45,7 @@ namespace ComputerVision
 
         private int[] GetColors(Func<Color, byte> myMethodName)
         {
-            uint countColors = 255;
-            int[] colors = new int[256];
+            int[] colors = new int[_countColors];
 
             for (int i = 0; i < WidthImage; i++)
             {
@@ -74,7 +75,7 @@ namespace ComputerVision
 
         public int[] GetAllColors()
         {
-            int[] allColors = new int[256];
+            int[] allColors = new int[_countColors];
             int[] colorR = GetColorRed();
             int[] colorG = GetColorGreen();
             int[] colorB = GetColorBlue();
@@ -196,13 +197,13 @@ namespace ComputerVision
 
         public Bitmap GetNormalizationPhoto()
         {
-            int countColors = 256;
             Bitmap grayPhoto = new Bitmap(GetGrayPhoto());
-            var colors = GetAllColors();
+            TransformImage transformImage = new TransformImage(grayPhoto);
+            var colors = transformImage.GetColorRed();
 
             int min = 0;
             int max = 0;
-            for (int i = 0; i < countColors; i++)
+            for (int i = 0; i < _countColors; i++)
             {
                 if (colors[i] != 0)
                 {
@@ -211,7 +212,7 @@ namespace ComputerVision
                 }
             }
 
-            for (int i = countColors - 1; i >= 0; i--)
+            for (int i = _countColors - 1; i >= 0; i--)
             {
                 if (colors[i] != 0)
                 {
@@ -231,9 +232,9 @@ namespace ComputerVision
                 {
                     newColor = grayPhoto.GetPixel(i, j).R - min;
                     newColor = (newColor < 0) ? 0 : newColor;
-                    
+
                     newColor = Convert.ToInt32(newColor * normalizationFactor) + newMin;
-                    
+
                     newColor = (newColor > 255) ? 255 : newColor;
                     result.SetPixel(i, j, Color.FromArgb(newColor, newColor, newColor));
                 }
@@ -241,11 +242,31 @@ namespace ComputerVision
             return result;
         }
 
-
-
-        private double GetValue(double value)
+        public Bitmap GetEqualizationPhoto()
         {
-            return 15 * Math.Log10(value + 1);
+            Bitmap grayPhoto = new Bitmap(GetGrayPhoto());
+            TransformImage transformImage = new TransformImage(grayPhoto);
+            var colors = transformImage.GetColorRed();
+            int[] equalizationValues = new int[_countColors];
+
+            equalizationValues[0] = colors[0];
+            for (int i = 1; i < _countColors; i++)
+            {
+                equalizationValues[i] += equalizationValues[i - 1] + colors[i];
+            }
+
+            int newColor;
+            Bitmap result = new Bitmap(WidthImage, HeightImage);
+            for (int i = 0; i < WidthImage; i++)
+            {
+                for (int j = 0; j < HeightImage; j++)
+                {
+                    newColor = Convert.ToInt32(Math.Round(_countColors * equalizationValues[grayPhoto.GetPixel(i, j).R] / (double)Size));
+                    newColor = (newColor > 255) ? 255 : newColor;
+                    result.SetPixel(i, j, Color.FromArgb(newColor, newColor, newColor));
+                }
+            }
+            return result;
         }
     }
 }

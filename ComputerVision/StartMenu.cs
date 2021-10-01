@@ -61,12 +61,13 @@ namespace ComputerVision
                     case "GetTransformByFunction":
                         pictureBoxLaba2TransformByFunctionOutput.Image = newImage;
                         break;
-                    case "NormaGistogramma":
-                        ClearChart(chartLaba2NormalGistorammaBefore);
+                    case "NormaHistogramma":
+                        ClearChart(chartLaba2NormalHistorammaBefore);
+                        ClearChart(chartLaba2NormalHistorammaAfter);
                         colorAll = transformImage.GetAllColors();
                         for (int i = 0; i <= 255; i++)
                         {
-                            chartLaba2NormalGistorammaBefore.Series["SeriesAll"].Points.AddXY(i, colorAll[i]);
+                            chartLaba2NormalHistorammaBefore.Series["SeriesAll"].Points.AddXY(i, colorAll[i]);
                         }
 
                         var normalizationPhoto = transformImage.GetNormalizationPhoto();
@@ -76,7 +77,26 @@ namespace ComputerVision
                         var normalizatonHist = image.GetAllColors();
                         for (int i = 0; i <= 255; i++)
                         {
-                            chartLaba2NormalGistorammaAfter.Series["SeriesAll"].Points.AddXY(i, normalizatonHist[i]);
+                            chartLaba2NormalHistorammaAfter.Series["SeriesAll"].Points.AddXY(i, normalizatonHist[i]);
+                        }
+                        break;
+                    case "EqualizationHistogramma":
+                        ClearChart(chartLaba2EqualizationHistorammaBefore);
+                        ClearChart(chartLaba2EqualizationHistorammaAfter);
+                        colorAll = transformImage.GetAllColors();
+                        for (int i = 0; i <= 255; i++)
+                        {
+                            chartLaba2EqualizationHistorammaBefore.Series["SeriesAll"].Points.AddXY(i, colorAll[i]);
+                        }
+
+                        var equalizationPhoto = transformImage.GetEqualizationPhoto();
+                        pictureBoxLaba2EqualizationHistogrammaOutput.Image = equalizationPhoto;
+
+                        image = new TransformImage(equalizationPhoto);
+                        var allColors = image.GetAllColors();
+                        for (int i = 0; i <= 255; i++)
+                        {
+                            chartLaba2EqualizationHistorammaAfter.Series["SeriesAll"].Points.AddXY(i, allColors[i]);
                         }
                         break;
                     default:
@@ -127,7 +147,12 @@ namespace ComputerVision
 
         private void pictureBoxLaba2NormaGistogramma_Click(object sender, EventArgs e)
         {
-            MainInvoke("NormaGistogramma", pictureBoxLaba2NormaGistogrammaInput);
+            MainInvoke("NormaHistogramma", pictureBoxLaba2NormaHistogrammaInput);
+        }
+
+        private void pictureBoxLaba2EqualizationHistogrammaInput_Click(object sender, EventArgs e)
+        {
+            MainInvoke("EqualizationHistogramma", pictureBoxLaba2EqualizationHistogrammaInput);
         }
     }
 }
