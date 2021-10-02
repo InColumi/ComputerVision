@@ -28,23 +28,23 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartMenu));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.chartRGB = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -84,6 +84,7 @@
             this.pictureBoxLaba2NormaHistogrammaOutput = new System.Windows.Forms.PictureBox();
             this.pictureBoxLaba2NormaHistogrammaInput = new System.Windows.Forms.PictureBox();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.chartLaba2EqualizationHistorammaAfter = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.splitter12 = new System.Windows.Forms.Splitter();
             this.chartLaba2EqualizationHistorammaBefore = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.splitter11 = new System.Windows.Forms.Splitter();
@@ -91,7 +92,6 @@
             this.pictureBoxLaba2EqualizationHistogrammaOutput = new System.Windows.Forms.PictureBox();
             this.splitter10 = new System.Windows.Forms.Splitter();
             this.pictureBoxLaba2EqualizationHistogrammaInput = new System.Windows.Forms.PictureBox();
-            this.chartLaba2EqualizationHistorammaAfter = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartRGB)).BeginInit();
@@ -122,11 +122,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2NormaHistogrammaOutput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2NormaHistogrammaInput)).BeginInit();
             this.tabPage10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartLaba2EqualizationHistorammaAfter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartLaba2EqualizationHistorammaBefore)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2EqualizationHistogrammaOutput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2EqualizationHistogrammaInput)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartLaba2EqualizationHistorammaAfter)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -155,41 +155,41 @@
             // 
             // chartRGB
             // 
-            chartArea11.AxisY.IsMarginVisible = false;
-            chartArea11.Name = "ChartAreaRed";
-            chartArea12.AxisY.IsMarginVisible = false;
-            chartArea12.Name = "ChartAreaGreen";
-            chartArea13.AxisY.IsMarginVisible = false;
-            chartArea13.Name = "ChartAreaBlue";
-            chartArea14.AxisY.IsMarginVisible = false;
-            chartArea14.Name = "ChartAreaAll";
-            this.chartRGB.ChartAreas.Add(chartArea11);
-            this.chartRGB.ChartAreas.Add(chartArea12);
-            this.chartRGB.ChartAreas.Add(chartArea13);
-            this.chartRGB.ChartAreas.Add(chartArea14);
+            chartArea1.AxisY.IsMarginVisible = false;
+            chartArea1.Name = "ChartAreaRed";
+            chartArea2.AxisY.IsMarginVisible = false;
+            chartArea2.Name = "ChartAreaGreen";
+            chartArea3.AxisY.IsMarginVisible = false;
+            chartArea3.Name = "ChartAreaBlue";
+            chartArea4.AxisY.IsMarginVisible = false;
+            chartArea4.Name = "ChartAreaAll";
+            this.chartRGB.ChartAreas.Add(chartArea1);
+            this.chartRGB.ChartAreas.Add(chartArea2);
+            this.chartRGB.ChartAreas.Add(chartArea3);
+            this.chartRGB.ChartAreas.Add(chartArea4);
             this.chartRGB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartRGB.Location = new System.Drawing.Point(539, 3);
             this.chartRGB.Name = "chartRGB";
-            series11.ChartArea = "ChartAreaRed";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
-            series11.Color = System.Drawing.Color.Red;
-            series11.Name = "SeriesRed";
-            series12.ChartArea = "ChartAreaGreen";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
-            series12.Color = System.Drawing.Color.Lime;
-            series12.Name = "SeriesGreen";
-            series13.ChartArea = "ChartAreaBlue";
-            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
-            series13.Color = System.Drawing.Color.Blue;
-            series13.Name = "SeriesBlue";
-            series14.ChartArea = "ChartAreaAll";
-            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
-            series14.Color = System.Drawing.Color.Black;
-            series14.Name = "SeriesAll";
-            this.chartRGB.Series.Add(series11);
-            this.chartRGB.Series.Add(series12);
-            this.chartRGB.Series.Add(series13);
-            this.chartRGB.Series.Add(series14);
+            series1.ChartArea = "ChartAreaRed";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series1.Color = System.Drawing.Color.Red;
+            series1.Name = "SeriesRed";
+            series2.ChartArea = "ChartAreaGreen";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series2.Color = System.Drawing.Color.Lime;
+            series2.Name = "SeriesGreen";
+            series3.ChartArea = "ChartAreaBlue";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series3.Color = System.Drawing.Color.Blue;
+            series3.Name = "SeriesBlue";
+            series4.ChartArea = "ChartAreaAll";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series4.Color = System.Drawing.Color.Black;
+            series4.Name = "SeriesAll";
+            this.chartRGB.Series.Add(series1);
+            this.chartRGB.Series.Add(series2);
+            this.chartRGB.Series.Add(series3);
+            this.chartRGB.Series.Add(series4);
             this.chartRGB.Size = new System.Drawing.Size(718, 552);
             this.chartRGB.TabIndex = 2;
             this.chartRGB.Text = "chart1";
@@ -421,6 +421,7 @@
             this.pictureBoxLaba2GrayWorldOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxLaba2GrayWorldOutput.TabIndex = 5;
             this.pictureBoxLaba2GrayWorldOutput.TabStop = false;
+            this.pictureBoxLaba2GrayWorldOutput.Click += new System.EventHandler(this.pictureBoxLaba2GrayWorldOutput_Click);
             // 
             // tabPage8
             // 
@@ -507,16 +508,16 @@
             // 
             // chartLaba2NormalHistorammaAfter
             // 
-            chartArea15.AxisY.IsMarginVisible = false;
-            chartArea15.Name = "ChartAreaAll";
-            this.chartLaba2NormalHistorammaAfter.ChartAreas.Add(chartArea15);
+            chartArea5.AxisY.IsMarginVisible = false;
+            chartArea5.Name = "ChartAreaAll";
+            this.chartLaba2NormalHistorammaAfter.ChartAreas.Add(chartArea5);
             this.chartLaba2NormalHistorammaAfter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartLaba2NormalHistorammaAfter.Location = new System.Drawing.Point(542, 255);
             this.chartLaba2NormalHistorammaAfter.Name = "chartLaba2NormalHistorammaAfter";
-            series15.ChartArea = "ChartAreaAll";
-            series15.Color = System.Drawing.Color.Black;
-            series15.Name = "SeriesAll";
-            this.chartLaba2NormalHistorammaAfter.Series.Add(series15);
+            series5.ChartArea = "ChartAreaAll";
+            series5.Color = System.Drawing.Color.Black;
+            series5.Name = "SeriesAll";
+            this.chartLaba2NormalHistorammaAfter.Series.Add(series5);
             this.chartLaba2NormalHistorammaAfter.Size = new System.Drawing.Size(693, 242);
             this.chartLaba2NormalHistorammaAfter.TabIndex = 13;
             this.chartLaba2NormalHistorammaAfter.Text = "chart1";
@@ -533,16 +534,16 @@
             // 
             // chartLaba2NormalHistorammaBefore
             // 
-            chartArea16.AxisY.IsMarginVisible = false;
-            chartArea16.Name = "ChartAreaAll";
-            this.chartLaba2NormalHistorammaBefore.ChartAreas.Add(chartArea16);
+            chartArea6.AxisY.IsMarginVisible = false;
+            chartArea6.Name = "ChartAreaAll";
+            this.chartLaba2NormalHistorammaBefore.ChartAreas.Add(chartArea6);
             this.chartLaba2NormalHistorammaBefore.Dock = System.Windows.Forms.DockStyle.Top;
             this.chartLaba2NormalHistorammaBefore.Location = new System.Drawing.Point(542, 3);
             this.chartLaba2NormalHistorammaBefore.Name = "chartLaba2NormalHistorammaBefore";
-            series16.ChartArea = "ChartAreaAll";
-            series16.Color = System.Drawing.Color.Black;
-            series16.Name = "SeriesAll";
-            this.chartLaba2NormalHistorammaBefore.Series.Add(series16);
+            series6.ChartArea = "ChartAreaAll";
+            series6.Color = System.Drawing.Color.Black;
+            series6.Name = "SeriesAll";
+            this.chartLaba2NormalHistorammaBefore.Series.Add(series6);
             this.chartLaba2NormalHistorammaBefore.Size = new System.Drawing.Size(693, 247);
             this.chartLaba2NormalHistorammaBefore.TabIndex = 6;
             this.chartLaba2NormalHistorammaBefore.Text = "chart1";
@@ -615,6 +616,22 @@
             this.tabPage10.Text = "Эквализация гистограммы";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
+            // chartLaba2EqualizationHistorammaAfter
+            // 
+            chartArea7.AxisY.IsMarginVisible = false;
+            chartArea7.Name = "ChartAreaAll";
+            this.chartLaba2EqualizationHistorammaAfter.ChartAreas.Add(chartArea7);
+            this.chartLaba2EqualizationHistorammaAfter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartLaba2EqualizationHistorammaAfter.Location = new System.Drawing.Point(578, 252);
+            this.chartLaba2EqualizationHistorammaAfter.Name = "chartLaba2EqualizationHistorammaAfter";
+            series7.ChartArea = "ChartAreaAll";
+            series7.Color = System.Drawing.Color.Black;
+            series7.Name = "SeriesAll";
+            this.chartLaba2EqualizationHistorammaAfter.Series.Add(series7);
+            this.chartLaba2EqualizationHistorammaAfter.Size = new System.Drawing.Size(657, 245);
+            this.chartLaba2EqualizationHistorammaAfter.TabIndex = 15;
+            this.chartLaba2EqualizationHistorammaAfter.Text = "chart1";
+            // 
             // splitter12
             // 
             this.splitter12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -627,16 +644,16 @@
             // 
             // chartLaba2EqualizationHistorammaBefore
             // 
-            chartArea10.AxisY.IsMarginVisible = false;
-            chartArea10.Name = "ChartAreaAll";
-            this.chartLaba2EqualizationHistorammaBefore.ChartAreas.Add(chartArea10);
+            chartArea8.AxisY.IsMarginVisible = false;
+            chartArea8.Name = "ChartAreaAll";
+            this.chartLaba2EqualizationHistorammaBefore.ChartAreas.Add(chartArea8);
             this.chartLaba2EqualizationHistorammaBefore.Dock = System.Windows.Forms.DockStyle.Top;
             this.chartLaba2EqualizationHistorammaBefore.Location = new System.Drawing.Point(578, 3);
             this.chartLaba2EqualizationHistorammaBefore.Name = "chartLaba2EqualizationHistorammaBefore";
-            series10.ChartArea = "ChartAreaAll";
-            series10.Color = System.Drawing.Color.Black;
-            series10.Name = "SeriesAll";
-            this.chartLaba2EqualizationHistorammaBefore.Series.Add(series10);
+            series8.ChartArea = "ChartAreaAll";
+            series8.Color = System.Drawing.Color.Black;
+            series8.Name = "SeriesAll";
+            this.chartLaba2EqualizationHistorammaBefore.Series.Add(series8);
             this.chartLaba2EqualizationHistorammaBefore.Size = new System.Drawing.Size(657, 244);
             this.chartLaba2EqualizationHistorammaBefore.TabIndex = 13;
             this.chartLaba2EqualizationHistorammaBefore.Text = "chart1";
@@ -694,22 +711,6 @@
             this.pictureBoxLaba2EqualizationHistogrammaInput.TabStop = false;
             this.pictureBoxLaba2EqualizationHistogrammaInput.Click += new System.EventHandler(this.pictureBoxLaba2EqualizationHistogrammaInput_Click);
             // 
-            // chartLaba2EqualizationHistorammaAfter
-            // 
-            chartArea9.AxisY.IsMarginVisible = false;
-            chartArea9.Name = "ChartAreaAll";
-            this.chartLaba2EqualizationHistorammaAfter.ChartAreas.Add(chartArea9);
-            this.chartLaba2EqualizationHistorammaAfter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartLaba2EqualizationHistorammaAfter.Location = new System.Drawing.Point(578, 252);
-            this.chartLaba2EqualizationHistorammaAfter.Name = "chartLaba2EqualizationHistorammaAfter";
-            series9.ChartArea = "ChartAreaAll";
-            series9.Color = System.Drawing.Color.Black;
-            series9.Name = "SeriesAll";
-            this.chartLaba2EqualizationHistorammaAfter.Series.Add(series9);
-            this.chartLaba2EqualizationHistorammaAfter.Size = new System.Drawing.Size(657, 245);
-            this.chartLaba2EqualizationHistorammaAfter.TabIndex = 15;
-            this.chartLaba2EqualizationHistorammaAfter.Text = "chart1";
-            // 
             // StartMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -751,11 +752,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2NormaHistogrammaOutput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2NormaHistogrammaInput)).EndInit();
             this.tabPage10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartLaba2EqualizationHistorammaAfter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartLaba2EqualizationHistorammaBefore)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2EqualizationHistogrammaOutput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLaba2EqualizationHistogrammaInput)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartLaba2EqualizationHistorammaAfter)).EndInit();
             this.ResumeLayout(false);
 
 		}
